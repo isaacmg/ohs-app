@@ -1,29 +1,27 @@
 //
-//  ViewController1.m
+//  ViewController5.m
 //  WordPress
 //
-//  Created by Isaac Godfried on 2/3/13.
+//  Created by Isaac Godfried on 2/15/13.
 //  Copyright (c) 2013 Isaac Godfried. All rights reserved.
 //
 
-#import "ViewController1.h"
-#import "BlogRss.h"
-#import "BlogRssParser.h"
-@interface ViewController1 ()
+#import "ViewController5.h"
+
+@interface ViewController5 ()
 
 @end
 
-@implementation ViewController1
-@synthesize passedString;
-
+@implementation ViewController5
+@synthesize webViewE=_webViewE;
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	NSString *httpSource =passedString; 
-     NSLog(@"NSString *string = \n%@", passedString);
+    NSString *httpSource =@"";
+    
     NSURL *fullUrl = [NSURL URLWithString:httpSource];
     NSURLRequest *httpRequest = [NSURLRequest requestWithURL:fullUrl];
-    [_webView loadRequest:httpRequest];
+    [_webViewE loadRequest:httpRequest];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -33,7 +31,7 @@
 }
 
 - (void)dealloc {
-    [_webView release];
+    [_webViewE release];
     [super dealloc];
 }
 @end

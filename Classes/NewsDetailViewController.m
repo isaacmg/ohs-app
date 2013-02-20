@@ -8,7 +8,7 @@
 
 #import "NewsDetailViewController.h"
 #import "RssFunAppDelegate.h"
-#import "BlogRss.h";
+#import "BlogRss.h"
 
 @implementation NewsDetailViewController
 
