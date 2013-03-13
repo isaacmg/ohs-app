@@ -18,6 +18,7 @@
 	NSMutableArray * _rssItems;
 	id<BlogRssParserDelegate> _delegate;
 	NSOperationQueue *_retrieverQueue;
+    
 }
 
 

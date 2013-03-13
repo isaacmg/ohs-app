@@ -1,26 +1,17 @@
 //
 //  ViewController2.m
-//  WordPress
+//  Orono High School App
 //
 //  Created by Isaac Godfried on 2/5/13.
 //  Copyright (c) 2013 Isaac Godfried. All rights reserved.
 //
 
 #import "ViewController2.h"
-
-@interface ViewController2 ()
-
-@end
-
 @implementation ViewController2
-@synthesize webView1=_webView1;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    return YES;
 }
 
 - (void)viewDidLoad
@@ -38,7 +29,20 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{   [self loadProperView];
+    
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self loadProperView];
+}
+-(void)loadProperView
+{   CGFloat width = CGRectGetWidth(self.view.bounds);
+    CGFloat height = CGRectGetHeight(self.view.bounds);
+    _webView1.frame=CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,width, height);
 
+}
 - (void)dealloc {
     [_webView1 release];
     [super dealloc];

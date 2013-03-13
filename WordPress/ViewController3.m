@@ -1,6 +1,6 @@
 //
 //  ViewController3.m
-//  WordPress
+//  Orono High School App
 //
 //  Created by Isaac Godfried on 2/5/13.
 //  Copyright (c) 2013 Isaac Godfried. All rights reserved.
@@ -19,19 +19,33 @@
 - (void)viewDidLoad
 {
     
-     
-    CGRect frame = CGRectMake(5,55, 310,200);
-    NSString *embedHTML =[self stringwork];
-    UIWebView *videoView = [[UIWebView alloc] initWithFrame:frame];
+     self.webView.backgroundColor = [UIColor  colorWithPatternImage:[UIImage imageNamed:@"back.png"]];
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+    {
+        CGRect frame = CGRectMake(90,200, 620,400);
+        NSString *embedHTML =[self stringwork];
+        UIWebView *videoView = [[UIWebView alloc] initWithFrame:frame];
+        videoView.backgroundColor = [UIColor clearColor];
+        [videoView loadHTMLString:embedHTML baseURL:nil];
+        [self.view addSubview:videoView];
+
+    }
+    else
+    {
+        CGRect frame = CGRectMake(5,55, 249,200);
+        NSString *embedHTML =[self stringwork];
+        UIWebView *videoView = [[UIWebView alloc] initWithFrame:frame];
+        videoView.backgroundColor = [UIColor clearColor];
+        [videoView loadHTMLString:embedHTML baseURL:nil];
+        [self.view addSubview:videoView];
+    }
+   
     
-    videoView.backgroundColor = [UIColor clearColor];
-    [videoView loadHTMLString:embedHTML baseURL:nil];
-    [self.view addSubview:videoView];
 
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
--(NSString *)stringwork
+-(NSString *)stringwork                                 //Returns Youtube HTML Embed String 
 {
     NSLog(@"NSURL*url = \n%@", passedString2);
     NSURL *fullUrl =passedString2;
@@ -59,7 +73,12 @@
                       </body></html>"];
     NSString* combinedFinal = [combinedString2 stringByAppendingString: embed2];
     NSLog(@"NSString*string=\n%@", combinedFinal);
-    return combinedFinal;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+      NSString *finalString=[combinedFinal stringByReplacingOccurrencesOfString:@"<iframe height=\"200\" width=\"310\"" withString:@"<iframe height=\"400\" width=\"610\""];
+        return finalString;
+    }
+    else return combinedFinal;
 
 }
 - (void)didReceiveMemoryWarning

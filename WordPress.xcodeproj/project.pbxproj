@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A27058016CEB8FA0019FCB0 /* ViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A27057F16CEB8FA0019FCB0 /* ViewController5.m */; };
+		6A29F22016E9182C000F3965 /* ViewController8.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A29F21F16E9182C000F3965 /* ViewController8.m */; };
 		6A41CB4E16BF74ED0065D068 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A41CB4D16BF74ED0065D068 /* UIKit.framework */; };
 		6A41CB5016BF74ED0065D068 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A41CB4F16BF74ED0065D068 /* Foundation.framework */; };
 		6A41CB5216BF74ED0065D068 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A41CB5116BF74ED0065D068 /* CoreGraphics.framework */; };
@@ -26,8 +27,6 @@
 		6A41CB8216BF74EE0065D068 /* WordPressTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41CB8116BF74EE0065D068 /* WordPressTests.m */; };
 		6A41CB9716BF750A0065D068 /* BlogRss.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41CB8D16BF750A0065D068 /* BlogRss.m */; };
 		6A41CB9816BF750A0065D068 /* BlogRssParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41CB8F16BF750A0065D068 /* BlogRssParser.m */; };
-		6A41CB9916BF750A0065D068 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41CB9116BF750A0065D068 /* NewsDetailViewController.m */; };
-		6A41CB9A16BF750A0065D068 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A41CB9216BF750A0065D068 /* NewsDetailViewController.xib */; };
 		6A41CB9B16BF750A0065D068 /* RssFunAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41CB9416BF750A0065D068 /* RssFunAppDelegate.m */; };
 		6A41CB9F16BF76A50065D068 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41CB9E16BF76A50065D068 /* ViewController1.m */; };
 		6A41CC6516C1D2810065D068 /* logo-red-riots-jpeg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6A41CC6416C1D2810065D068 /* logo-red-riots-jpeg1.jpg */; };
@@ -42,10 +41,14 @@
 		6A41CDE216C28E910065D068 /* ViewController6.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41CDE116C28E910065D068 /* ViewController6.m */; };
 		6A41CDE816C29A2A0065D068 /* 2.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 6A41CDE716C29A2A0065D068 /* 2.tiff */; };
 		6A41CDEA16C29AA30065D068 /* revised.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 6A41CDE916C29AA30065D068 /* revised.tiff */; };
+		6AAD9D8E16E0F95C007BB843 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD9D8D16E0F95C007BB843 /* icon.jpg */; };
+		6AAD9D9016E0FA8E007BB843 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD9D8F16E0FA8E007BB843 /* icon2.png */; };
+		6ACBDA1316E278E200CDFD06 /* ViewController7.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACBDA1216E278E100CDFD06 /* ViewController7.m */; };
+		6ACBDA1916E2917100CDFD06 /* generic_user_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6ACBDA1816E2917100CDFD06 /* generic_user_image.jpg */; };
+		6ACBDA1C16E2981E00CDFD06 /* Teacher Info.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACBDA1B16E2981E00CDFD06 /* Teacher Info.m */; };
 		6ADE002816C9A34A00077594 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADE002716C9A34A00077594 /* CFNetwork.framework */; };
 		6ADE002A16C9A35B00077594 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADE002916C9A35A00077594 /* EventKit.framework */; };
 		6ADE00A216C9C68500077594 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE00A116C9C68500077594 /* ISO8601DateFormatter.m */; };
-		6ADE00A516C9DAF700077594 /* CalendarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE00A416C9DAF700077594 /* CalendarTableViewController.m */; };
 		6ADEFD6716C33EE900077594 /* schoolname.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6ADEFD6616C33EE900077594 /* schoolname.gif */; };
 		6ADEFD6D16C33F8100077594 /* 213.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 6ADEFD6C16C33F8100077594 /* 213.tiff */; };
 		6ADEFEC916C74E0500077594 /* CalanderData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADEFEC816C74E0400077594 /* CalanderData.m */; };
@@ -107,6 +110,8 @@
 /* Begin PBXFileReference section */
 		6A27057E16CEB8FA0019FCB0 /* ViewController5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController5.h; path = ../ViewController5.h; sourceTree = "<group>"; };
 		6A27057F16CEB8FA0019FCB0 /* ViewController5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController5.m; path = ../ViewController5.m; sourceTree = "<group>"; };
+		6A29F21E16E9182C000F3965 /* ViewController8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController8.h; sourceTree = "<group>"; };
+		6A29F21F16E9182C000F3965 /* ViewController8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController8.m; sourceTree = "<group>"; };
 		6A41CB4916BF74ED0065D068 /* WordPress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordPress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A41CB4D16BF74ED0065D068 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6A41CB4F16BF74ED0065D068 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -133,9 +138,6 @@
 		6A41CB8D16BF750A0065D068 /* BlogRss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogRss.m; sourceTree = "<group>"; };
 		6A41CB8E16BF750A0065D068 /* BlogRssParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogRssParser.h; sourceTree = "<group>"; };
 		6A41CB8F16BF750A0065D068 /* BlogRssParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogRssParser.m; sourceTree = "<group>"; };
-		6A41CB9016BF750A0065D068 /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
-		6A41CB9116BF750A0065D068 /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
-		6A41CB9216BF750A0065D068 /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
 		6A41CB9316BF750A0065D068 /* RssFunAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssFunAppDelegate.h; sourceTree = "<group>"; };
 		6A41CB9416BF750A0065D068 /* RssFunAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssFunAppDelegate.m; sourceTree = "<group>"; };
 		6A41CB9D16BF76A50065D068 /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController1.h; path = ../ViewController1.h; sourceTree = "<group>"; };
@@ -478,12 +480,17 @@
 		6A41CDE116C28E910065D068 /* ViewController6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController6.m; sourceTree = "<group>"; };
 		6A41CDE716C29A2A0065D068 /* 2.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 2.tiff; sourceTree = "<group>"; };
 		6A41CDE916C29AA30065D068 /* revised.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = revised.tiff; sourceTree = "<group>"; };
+		6AAD9D8D16E0F95C007BB843 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
+		6AAD9D8F16E0FA8E007BB843 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
+		6ACBDA1116E278E100CDFD06 /* ViewController7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController7.h; sourceTree = "<group>"; };
+		6ACBDA1216E278E100CDFD06 /* ViewController7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController7.m; sourceTree = "<group>"; };
+		6ACBDA1816E2917100CDFD06 /* generic_user_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = generic_user_image.jpg; sourceTree = "<group>"; };
+		6ACBDA1A16E2981E00CDFD06 /* Teacher Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Teacher Info.h"; path = "../WordPress/Teacher Info.h"; sourceTree = "<group>"; };
+		6ACBDA1B16E2981E00CDFD06 /* Teacher Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Teacher Info.m"; path = "../WordPress/Teacher Info.m"; sourceTree = "<group>"; };
 		6ADE002716C9A34A00077594 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6ADE002916C9A35A00077594 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		6ADE00A016C9C68400077594 /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
 		6ADE00A116C9C68500077594 /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601DateFormatter.m; sourceTree = "<group>"; };
-		6ADE00A316C9DAF700077594 /* CalendarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTableViewController.h; sourceTree = "<group>"; };
-		6ADE00A416C9DAF700077594 /* CalendarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTableViewController.m; sourceTree = "<group>"; };
 		6ADEFD6616C33EE900077594 /* schoolname.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = schoolname.gif; sourceTree = "<group>"; };
 		6ADEFD6C16C33F8100077594 /* 213.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 213.tiff; sourceTree = "<group>"; };
 		6ADEFEC716C74E0400077594 /* CalanderData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalanderData.h; sourceTree = "<group>"; };
@@ -572,11 +579,13 @@
 				6A41CDDD16C1FB1A0065D068 /* ViewController3.h */,
 				6A41CDDE16C1FB1A0065D068 /* ViewController3.m */,
 				6A27057E16CEB8FA0019FCB0 /* ViewController5.h */,
+				6ACBDA1116E278E100CDFD06 /* ViewController7.h */,
+				6ACBDA1216E278E100CDFD06 /* ViewController7.m */,
 				6A27057F16CEB8FA0019FCB0 /* ViewController5.m */,
 				6A41CDE016C28E910065D068 /* ViewController6.h */,
 				6A41CDE116C28E910065D068 /* ViewController6.m */,
-				6ADE00A316C9DAF700077594 /* CalendarTableViewController.h */,
-				6ADE00A416C9DAF700077594 /* CalendarTableViewController.m */,
+				6A29F21E16E9182C000F3965 /* ViewController8.h */,
+				6A29F21F16E9182C000F3965 /* ViewController8.m */,
 				6A41CB5416BF74ED0065D068 /* Supporting Files */,
 				6ADEFEC716C74E0400077594 /* CalanderData.h */,
 				6ADEFEC816C74E0400077594 /* CalanderData.m */,
@@ -587,10 +596,13 @@
 		6A41CB5416BF74ED0065D068 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6ACBDA1816E2917100CDFD06 /* generic_user_image.jpg */,
 				6ADE00A016C9C68400077594 /* ISO8601DateFormatter.h */,
 				6ADE00A116C9C68500077594 /* ISO8601DateFormatter.m */,
 				6ADEFD6C16C33F8100077594 /* 213.tiff */,
 				6ADEFD6616C33EE900077594 /* schoolname.gif */,
+				6AAD9D8D16E0F95C007BB843 /* icon.jpg */,
+				6AAD9D8F16E0FA8E007BB843 /* icon2.png */,
 				6A41CDE916C29AA30065D068 /* revised.tiff */,
 				6A41CDE716C29A2A0065D068 /* 2.tiff */,
 				6A41CC6C16C1D7C90065D068 /* 2febb.png */,
@@ -632,12 +644,11 @@
 			children = (
 				6A41CC9216C1E6D40065D068 /* Headers */,
 				6A41CB8C16BF750A0065D068 /* BlogRss.h */,
+				6ACBDA1A16E2981E00CDFD06 /* Teacher Info.h */,
+				6ACBDA1B16E2981E00CDFD06 /* Teacher Info.m */,
 				6A41CB8D16BF750A0065D068 /* BlogRss.m */,
 				6A41CB8E16BF750A0065D068 /* BlogRssParser.h */,
 				6A41CB8F16BF750A0065D068 /* BlogRssParser.m */,
-				6A41CB9016BF750A0065D068 /* NewsDetailViewController.h */,
-				6A41CB9116BF750A0065D068 /* NewsDetailViewController.m */,
-				6A41CB9216BF750A0065D068 /* NewsDetailViewController.xib */,
 				6A41CB9316BF750A0065D068 /* RssFunAppDelegate.h */,
 				6A41CB9416BF750A0065D068 /* RssFunAppDelegate.m */,
 			);
@@ -1108,7 +1119,6 @@
 				6A41CB6216BF74ED0065D068 /* Default@2x.png in Resources */,
 				6A41CB6416BF74ED0065D068 /* Default-568h@2x.png in Resources */,
 				6A41CB6716BF74ED0065D068 /* MainStoryboard_iPhone.storyboard in Resources */,
-				6A41CB9A16BF750A0065D068 /* NewsDetailViewController.xib in Resources */,
 				6A41CC6516C1D2810065D068 /* logo-red-riots-jpeg1.jpg in Resources */,
 				6A41CC6816C1D5430065D068 /* back.png in Resources */,
 				6A41CC6D16C1D7C90065D068 /* 2febb.png in Resources */,
@@ -1118,6 +1128,9 @@
 				6AE8EBFF16C3016E00A2C3F1 /* MainStoryboard_iPad.storyboard in Resources */,
 				6ADEFD6716C33EE900077594 /* schoolname.gif in Resources */,
 				6ADEFD6D16C33F8100077594 /* 213.tiff in Resources */,
+				6AAD9D8E16E0F95C007BB843 /* icon.jpg in Resources */,
+				6AAD9D9016E0FA8E007BB843 /* icon2.png in Resources */,
+				6ACBDA1916E2917100CDFD06 /* generic_user_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1157,7 +1170,6 @@
 				6A41CB6D16BF74EE0065D068 /* ViewController.m in Sources */,
 				6A41CB9716BF750A0065D068 /* BlogRss.m in Sources */,
 				6A41CB9816BF750A0065D068 /* BlogRssParser.m in Sources */,
-				6A41CB9916BF750A0065D068 /* NewsDetailViewController.m in Sources */,
 				6A41CB9B16BF750A0065D068 /* RssFunAppDelegate.m in Sources */,
 				6A41CB9F16BF76A50065D068 /* ViewController1.m in Sources */,
 				6A41CC6B16C1D6AA0065D068 /* ViewController2.m in Sources */,
@@ -1165,8 +1177,10 @@
 				6A41CDE216C28E910065D068 /* ViewController6.m in Sources */,
 				6ADEFEC916C74E0500077594 /* CalanderData.m in Sources */,
 				6ADE00A216C9C68500077594 /* ISO8601DateFormatter.m in Sources */,
-				6ADE00A516C9DAF700077594 /* CalendarTableViewController.m in Sources */,
 				6A27058016CEB8FA0019FCB0 /* ViewController5.m in Sources */,
+				6ACBDA1316E278E200CDFD06 /* ViewController7.m in Sources */,
+				6ACBDA1C16E2981E00CDFD06 /* Teacher Info.m in Sources */,
+				6A29F22016E9182C000F3965 /* ViewController8.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

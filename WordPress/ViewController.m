@@ -7,52 +7,49 @@
 //
 
 #import "ViewController.h"
-#import "BlogRssParser.h"
-#import "BlogRss.h"
-#import "RssFunAppDelegate.h"
-#import "ViewController1.h"
-#import "ISO8601DateFormatter.h"
+
 @implementation ViewController
-@synthesize rssParser = _rssParser;
 @synthesize wordpresstableView =_tableView;
-@synthesize upcomingView=_upcomingView;
-@synthesize appDelegate = _appDelegate;
-@synthesize toolbar = _toolbar;
 @synthesize url;
 @synthesize feed;
-
 @synthesize selectedRow; 
 
--(void)toolbarInit{
-    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc]
-                                      initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                      target:self action:@selector(reloadRss)];
-	refreshButton.enabled = NO;
-	NSArray *items = [NSArray arrayWithObjects: refreshButton,  nil];
-	[self.toolbar setItems:items animated:NO];
-	[refreshButton release];
-}
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	[self toolbarInit];
     self.view.backgroundColor = [UIColor  colorWithPatternImage:[UIImage imageNamed:@"back.png"]];
+    //RSS Feed 
 	_rssParser = [[BlogRssParser alloc]init];
 	self.rssParser.delegate = self;
-	[[self rssParser]startProcess];                                 //GData Youtube  
+	[[self rssParser]startProcess];
+    //GData Youtube
     GDataServiceGoogleYouTube *service = [self youTubeService]; 
 	NSString *uploadsID = kGDataYouTubeUserFeedIDUploads;
 	NSURL *feedURL = [GDataServiceGoogleYouTube youTubeURLForUserID:@"oronoriot" userFeedID:uploadsID];
     [self internetCheck];
 	[self LoadCalendarData];
-    
-	[service fetchFeedWithURL:feedURL
-                     delegate:self
-            didFinishSelector:@selector(request:finishedWithFeed:error:)];
-    
+	[service fetchFeedWithURL:feedURL delegate:self didFinishSelector:@selector(request:finishedWithFeed:error:)];
+    NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.wunderground.com/api/eae1e849db26ed92/conditions/q/ME/Orono.json"]];
+    NSURLConnection *theConnection=[[NSURLConnection alloc]initWithRequest:theRequest delegate:self];
+    if([self internetCheck]){
+        _weatherInfo = [[NSMutableData alloc] init];
+    } else {
+        NSLog(@"failed");
+    }
 }
--(BOOL)internetCheck
+-(void)viewDidAppear:(BOOL)animated
+{
+    UIDeviceOrientation interface = [[UIDevice currentDevice] orientation];
+    if(((interface == UIInterfaceOrientationLandscapeLeft) ||
+        (interface == UIInterfaceOrientationLandscapeRight))){
+        //Just so your table is not at a random place in your view
+        [self landscapeLayout];
+    }else if(((interface == UIInterfaceOrientationPortrait) ||
+              (interface == UIInterfaceOrientationPortraitUpsideDown))){
+        [self portraitLayout];
+    }
+
+}
+-(BOOL)internetCheck                   
 {
     NSError*error=nil;
     NSURL*googleURL= [NSURL URLWithString:@"http://www.google.com"];
@@ -72,22 +69,40 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return YES;
 }
-
-
--(void)toggleToolBarButtons:(BOOL)newState{
-	NSArray *toolbarItems = self.toolbar.items;
-	for (UIBarButtonItem *item in toolbarItems){
-		item.enabled = newState;
-	}
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    UIDeviceOrientation interface = [[UIDevice currentDevice] orientation];
+    if(((interface == UIInterfaceOrientationLandscapeLeft) ||
+        (interface == UIInterfaceOrientationLandscapeRight))){
+        //Just so your table is not at a random place in your view
+        [self landscapeLayout];
+    }else if(((interface == UIInterfaceOrientationPortrait) ||
+              (interface == UIInterfaceOrientationPortraitUpsideDown))){
+        [self portraitLayout];
+    }
+}
+-(void)landscapeLayout
+{
+    _tableView.frame = CGRectMake(310,40,_tableView.frame.size.width, _tableView.frame.size.height);
+    _youtubeTableView.hidden=YES;
+    CGRect high=CGRectMake(2, 230, _refresh.frame.size.width, _refresh.frame.size.height-2);
+    [_refresh setFrame: high];
+}
+-(void)portraitLayout
+{   if(UI_USER_INTERFACE_IDIOM() ==UIUserInterfaceIdiomPhone)
+    {
+    _tableView.frame=CGRectMake(0,193,_tableView.frame.size.width,_tableView.frame.size.height);
+    _refresh.frame=CGRectMake(263,3,_refresh.frame.size.width,_refresh.frame.size.height);
+    _youtubeTableView.hidden=NO;
+    }
+    
 }
 
 //Delegate method for blog parser will get fired when the process is completed
 - (void)processCompleted{
 	//reload the table view
-	[self toggleToolBarButtons:YES];
 	[[self wordpresstableView]reloadData];
     
 }
@@ -99,13 +114,13 @@ finishedWithFeed:(GDataFeedBase *)aFeed
     
 	[self.youtubeTableView reloadData];
     
+    
 }
 
 
 -(void)processHasErrors{
 	//Might be due to Internet
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Connectivity" message:@"Unable to download data. Please check if you are connected to internet."
-												   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Connectivity" message:@"Unable to download data. Please check if you are connected to internet."delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
 	[alert show];
 	[alert release];
 	[self toggleToolBarButtons:YES];
@@ -121,9 +136,9 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         return [[feed entries] count];
     }
     else if (tableView==self.upcomingView)
-{
+    {
     return [_EventArray count];
-}
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -153,7 +168,6 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         GDataEntryBase *entry = [[feed entries] objectAtIndex:indexPath.row];
         NSString *title = [[entry title] stringValue];
         NSArray *thumbnails = [[(GDataEntryYouTubeVideo *)entry mediaGroup] mediaThumbnails];
-        
         cell.textLabel.text = title;
         cell.textLabel.numberOfLines = 2;
         cell.textLabel.font = [UIFont boldSystemFontOfSize:12];
@@ -173,31 +187,17 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         
         // Configure the cell...
         CalanderData *eventLcl = (CalanderData *)[_EventArray objectAtIndex:[indexPath row]];
-        
-        
-        
-        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-        NSLocale *locale = [NSLocale currentLocale];
-        [dateFormat setLocale:locale];
-        //[dateFormat setDateFormat:@"M/dd/yyyy"];
-        [dateFormat setDateStyle:NSDateFormatterMediumStyle];
-        
         cell.textLabel.numberOfLines = 2;
         cell.textLabel.text = [NSString stringWithFormat:@"%@", eventLcl.Title];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:12];
         cell.detailTextLabel.numberOfLines = 2;
         NSString *str1=[eventLcl.Description stringByReplacingOccurrencesOfString:@"<br />" withString:@""];
-        
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@" , str1];
         NSLog(@"NSString*str=\n%@",str1);
-        
-      
-        
-        [dateFormat release];
         return cell;
           }
 }
-//Calander Void Functions 
+//Calander Functions 
 
 -(void)LoadCalendarData
 {
@@ -207,12 +207,10 @@ finishedWithFeed:(GDataFeedBase *)aFeed
     dispatch_sync(kBgQueue, ^{
         NSData* data = [NSData dataWithContentsOfURL: kGoogleCalendarURL];
         [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
-        NSLog(@"Last Game");
-    });
+        NSLog(@"Last Game");});
     }
     else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Connectivity" message:@"Unable to download data. Please check if you are connected to internet."
-                                                       delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Connectivity" message:@"Unable to download data. Please check if you are connected to internet."delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     }
 }
 
@@ -236,36 +234,6 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         
         NSDictionary *title = [event objectForKey:@"title"];
         googCalObj.Title = [title objectForKey:@"$t"];
-        
-        // Convert string to date object
-        NSDateFormatter *dateFormat = [[[NSDateFormatter alloc] init]autorelease];
-        NSLocale *enUSPOSIXLocale;
-        enUSPOSIXLocale = [[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease];
-        [dateFormat setLocale:enUSPOSIXLocale];
-        [dateFormat setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
-        [dateFormat setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-        
-        //dates are stored in an array
-        NSArray *dateArr = [event objectForKey:@"gd$when"];
-        for(NSDictionary *dateDict in dateArr)
-        {
-            
-            NSLocale *enUSPOSIXLocale;
-            enUSPOSIXLocale = [[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease];
-            ISO8601DateFormatter *formatter = [[ISO8601DateFormatter alloc] init];
-            
-            NSDate *endDate = [formatter dateFromString:[dateDict objectForKey:@"endTime"]];
-            NSDate *startDate = [formatter dateFromString:[dateDict objectForKey:@"startTime"]];
-            [formatter release], formatter = nil;
-            
-            googCalObj.EndDate = endDate; //[endDate addTimeInterval:-3600*6];
-            googCalObj.StartDate = startDate; //[startDate addTimeInterval:-3600*6];
-            NSLog(@"Event: %@", [dateDict objectForKey:@"endTime"]);
-            NSLog(@"Event: %@", googCalObj.EndDate);
-            
-        }
-        
-        
         NSDictionary *content = [event objectForKey:@"content"];
         googCalObj.Description = [content objectForKey:@"$t"];
         
@@ -275,15 +243,6 @@ finishedWithFeed:(GDataFeedBase *)aFeed
     }
 }
 //End Void functions Calander
-//Begin Action sheet
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if(buttonIndex == 0)
-    {
-        [self AddEventToCalendar];
-    }
-    NSLog(@"Button %d", selectedRow);
-}
 
 -(void)AddEventToCalendar
 {
@@ -334,19 +293,48 @@ finishedWithFeed:(GDataFeedBase *)aFeed
 
     }
 }
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    [_weatherInfo setLength:0];
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [_weatherInfo appendData:data];
+}
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSError *myError = nil;
+    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:_weatherInfo options:NSJSONReadingMutableLeaves  error:&myError];
+    NSArray *results =  [res objectForKey:@"current_observation"];
+    NSString *cur = [results valueForKey:@"weather"];
+    NSString *tmp = [results valueForKey:@"temperature_string"];
+    NSString*imgUrl=[results valueForKey:@"icon_url"];
+    NSLog(@"Current conditions: %@, %@", cur, tmp);
+    NSURL*weatherIcon=[NSURL URLWithString:imgUrl];
+    NSData * imageData = [NSData dataWithContentsOfURL:weatherIcon];
+    UIImage * image = [UIImage imageWithData:imageData];
+    _weatherImage.image=image;
+    _weatherCondition.text=cur;
+    _temperature.text=tmp;
+}
+
 - (IBAction)refresh:(UIButton *)sender {
     [self viewDidLoad];
     [[self upcomingView]reloadData];
 
 }
+
 - (void)dealloc {
-	[_appDelegate release];
 	[_toolbar release];
 	[_tableView release];
 	[_rssParser release];
     [_youtubeTableView release];
     [_upcomingView release];
     [_refresh release];
+    [_weatherCondition release];
+    [_weatherImage release];
+    [_temperature release];
     [super dealloc];
 }
 - (GDataServiceGoogleYouTube *)youTubeService {
@@ -360,9 +348,7 @@ finishedWithFeed:(GDataFeedBase *)aFeed
 	}
 	
 	// fetch unauthenticated
-	[_service setUserCredentialsWithUsername:nil
-                                    password:nil];
-	
+	[_service setUserCredentialsWithUsername:nil password:nil];
 	return _service;
 }
 

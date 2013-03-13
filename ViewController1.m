@@ -1,17 +1,13 @@
 //
 //  ViewController1.m
-//  WordPress
+//  Orono High School App
 //
 //  Created by Isaac Godfried on 2/3/13.
 //  Copyright (c) 2013 Isaac Godfried. All rights reserved.
 //
 
 #import "ViewController1.h"
-#import "BlogRss.h"
-#import "BlogRssParser.h"
-@interface ViewController1 ()
 
-@end
 
 @implementation ViewController1
 @synthesize passedString;
@@ -25,7 +21,19 @@
     NSURLRequest *httpRequest = [NSURLRequest requestWithURL:fullUrl];
     [_webView loadRequest:httpRequest];
 }
-
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{   [self loadProperView];
+   
+       }
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self loadProperView];
+}
+-(void)loadProperView
+{   CGFloat width = CGRectGetWidth(self.view.bounds);
+    CGFloat height = CGRectGetHeight(self.view.bounds);
+    _webView.frame=CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,width, height);
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
