@@ -27,7 +27,6 @@
 		6A41CB8216BF74EE0065D068 /* WordPressTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41CB8116BF74EE0065D068 /* WordPressTests.m */; };
 		6A41CB9716BF750A0065D068 /* BlogRss.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41CB8D16BF750A0065D068 /* BlogRss.m */; };
 		6A41CB9816BF750A0065D068 /* BlogRssParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41CB8F16BF750A0065D068 /* BlogRssParser.m */; };
-		6A41CB9B16BF750A0065D068 /* RssFunAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41CB9416BF750A0065D068 /* RssFunAppDelegate.m */; };
 		6A41CB9F16BF76A50065D068 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41CB9E16BF76A50065D068 /* ViewController1.m */; };
 		6A41CC6516C1D2810065D068 /* logo-red-riots-jpeg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6A41CC6416C1D2810065D068 /* logo-red-riots-jpeg1.jpg */; };
 		6A41CC6816C1D5430065D068 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A41CC6716C1D5430065D068 /* back.png */; };
@@ -138,8 +137,6 @@
 		6A41CB8D16BF750A0065D068 /* BlogRss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogRss.m; sourceTree = "<group>"; };
 		6A41CB8E16BF750A0065D068 /* BlogRssParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogRssParser.h; sourceTree = "<group>"; };
 		6A41CB8F16BF750A0065D068 /* BlogRssParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogRssParser.m; sourceTree = "<group>"; };
-		6A41CB9316BF750A0065D068 /* RssFunAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssFunAppDelegate.h; sourceTree = "<group>"; };
-		6A41CB9416BF750A0065D068 /* RssFunAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssFunAppDelegate.m; sourceTree = "<group>"; };
 		6A41CB9D16BF76A50065D068 /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController1.h; path = ../ViewController1.h; sourceTree = "<group>"; };
 		6A41CB9E16BF76A50065D068 /* ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController1.m; path = ../ViewController1.m; sourceTree = "<group>"; };
 		6A41CC6416C1D2810065D068 /* logo-red-riots-jpeg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "logo-red-riots-jpeg1.jpg"; sourceTree = "<group>"; };
@@ -493,8 +490,8 @@
 		6ADE00A116C9C68500077594 /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601DateFormatter.m; sourceTree = "<group>"; };
 		6ADEFD6616C33EE900077594 /* schoolname.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = schoolname.gif; sourceTree = "<group>"; };
 		6ADEFD6C16C33F8100077594 /* 213.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 213.tiff; sourceTree = "<group>"; };
-		6ADEFEC716C74E0400077594 /* CalanderData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalanderData.h; sourceTree = "<group>"; };
-		6ADEFEC816C74E0400077594 /* CalanderData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalanderData.m; sourceTree = "<group>"; };
+		6ADEFEC716C74E0400077594 /* CalanderData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalanderData.h; path = ../WordPress/CalanderData.h; sourceTree = "<group>"; };
+		6ADEFEC816C74E0400077594 /* CalanderData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalanderData.m; path = ../WordPress/CalanderData.m; sourceTree = "<group>"; };
 		6AE8EBFE16C3016E00A2C3F1 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -587,8 +584,6 @@
 				6A29F21E16E9182C000F3965 /* ViewController8.h */,
 				6A29F21F16E9182C000F3965 /* ViewController8.m */,
 				6A41CB5416BF74ED0065D068 /* Supporting Files */,
-				6ADEFEC716C74E0400077594 /* CalanderData.h */,
-				6ADEFEC816C74E0400077594 /* CalanderData.m */,
 			);
 			path = WordPress;
 			sourceTree = "<group>";
@@ -642,6 +637,8 @@
 		6A41CB8B16BF750A0065D068 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6ADEFEC716C74E0400077594 /* CalanderData.h */,
+				6ADEFEC816C74E0400077594 /* CalanderData.m */,
 				6A41CC9216C1E6D40065D068 /* Headers */,
 				6A41CB8C16BF750A0065D068 /* BlogRss.h */,
 				6ACBDA1A16E2981E00CDFD06 /* Teacher Info.h */,
@@ -649,8 +646,6 @@
 				6A41CB8D16BF750A0065D068 /* BlogRss.m */,
 				6A41CB8E16BF750A0065D068 /* BlogRssParser.h */,
 				6A41CB8F16BF750A0065D068 /* BlogRssParser.m */,
-				6A41CB9316BF750A0065D068 /* RssFunAppDelegate.h */,
-				6A41CB9416BF750A0065D068 /* RssFunAppDelegate.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1170,7 +1165,6 @@
 				6A41CB6D16BF74EE0065D068 /* ViewController.m in Sources */,
 				6A41CB9716BF750A0065D068 /* BlogRss.m in Sources */,
 				6A41CB9816BF750A0065D068 /* BlogRssParser.m in Sources */,
-				6A41CB9B16BF750A0065D068 /* RssFunAppDelegate.m in Sources */,
 				6A41CB9F16BF76A50065D068 /* ViewController1.m in Sources */,
 				6A41CC6B16C1D6AA0065D068 /* ViewController2.m in Sources */,
 				6A41CDDF16C1FB1A0065D068 /* ViewController3.m in Sources */,

@@ -17,7 +17,6 @@
 #import "CalanderData.h"
 #import <Foundation/NSJSONSerialization.h>
 #import <EventKit/EventKit.h>
-#import "RssFunAppDelegate.h"
 
 @class BlogRssParser;
 @class BlogRss;
@@ -25,7 +24,6 @@
 @interface ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,BlogRssParserDelegate> {
 	BlogRssParser * _rssParser;
 	UITableView * _tableView;
-	RssFunAppDelegate * _appDelegate;
 	UIToolbar * _toolbar;
     NSMutableArray*_EventArray;
     NSInteger selectedRow;
