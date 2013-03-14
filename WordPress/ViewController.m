@@ -57,7 +57,6 @@
     return ( checkError != NULL ) ? YES : NO;
 }
 -(void)reloadRss{
-	[self toggleToolBarButtons:NO];
 	[[self rssParser]startProcess];
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -96,7 +95,7 @@
     _tableView.frame=CGRectMake(0,193,_tableView.frame.size.width,_tableView.frame.size.height);
     _refresh.frame=CGRectMake(263,3,_refresh.frame.size.width,_refresh.frame.size.height);
     _youtubeTableView.hidden=NO;
-    }
+}
     
 }
 
@@ -123,7 +122,6 @@ finishedWithFeed:(GDataFeedBase *)aFeed
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Connectivity" message:@"Unable to download data. Please check if you are connected to internet."delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
 	[alert show];
 	[alert release];
-	[self toggleToolBarButtons:YES];
 }
 //UITableView Info
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

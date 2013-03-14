@@ -634,23 +634,12 @@
         <class className="BlogRssParser" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BlogRssParser.h"/>
         </class>
-        <class className="RssFunAppDelegate" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RssFunAppDelegate.h"/>
-            <relationships>
-                <relationship kind="outlet" name="navigationController" candidateClass="UINavigationController"/>
-                <relationship kind="outlet" name="newsDetailController" candidateClass="NewsDetailViewController"/>
-                <relationship kind="outlet" name="viewController" candidateClass="RssFunViewController"/>
-                <relationship kind="outlet" name="window" candidateClass="UIWindow"/>
-            </relationships>
-        </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="appDelegate" candidateClass="RssFunAppDelegate"/>
                 <relationship kind="outlet" name="refresh" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="rssParser" candidateClass="BlogRssParser"/>
                 <relationship kind="outlet" name="temperature" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="upcomingView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="weatherCondition" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="weatherImage" candidateClass="UIImageView"/>

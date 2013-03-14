@@ -53,8 +53,7 @@ Orono, ME</string>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ry2-NN-Z7D">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="121" id="g3u-Gs-NdH"/>
-                                    <constraint firstAttribute="height" constant="71" id="kEg-sl-H6y"/>
+                                    <constraint firstAttribute="width" constant="130" id="NLl-nn-lVN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button" image="schoolname.gif">
@@ -70,8 +69,8 @@ Orono, ME</string>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zl4-4d-xhX">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="122" id="6eZ-Th-gIE"/>
-                                    <constraint firstAttribute="height" constant="63" id="Y2x-9u-Au7"/>
+                                    <constraint firstAttribute="height" constant="60" id="0hx-Tm-BrL"/>
+                                    <constraint firstAttribute="width" constant="130" id="BvB-hQ-tt4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button" image="213.tiff">
@@ -105,9 +104,12 @@ Orono, ME</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qm3-x5-KTt">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="8DE-1J-ViA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Staff Directory" backgroundImage="Default@2x.png">
+                                    <color key="titleColor" red="1" green="0.87404996710000005" blue="0.63855922600000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -175,17 +177,17 @@ Orono, ME</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="kTB-9O-2BW" secondAttribute="bottom" constant="6" id="0iX-9t-1l0"/>
-                            <constraint firstItem="qm3-x5-KTt" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="359" id="30p-oM-9xZ"/>
                             <constraint firstAttribute="trailing" secondItem="fdN-GS-3MA" secondAttribute="trailing" constant="8" id="3F5-Qg-59B"/>
+                            <constraint firstItem="Zl4-4d-xhX" firstAttribute="leading" secondItem="Ry2-NN-Z7D" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="5dh-5a-NfE"/>
+                            <constraint firstItem="qm3-x5-KTt" firstAttribute="centerY" secondItem="Zl4-4d-xhX" secondAttribute="centerY" type="default" id="7Po-Gf-TOW"/>
                             <constraint firstItem="URC-31-eHY" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="35" id="7Xv-Ca-b8Q"/>
+                            <constraint firstItem="qm3-x5-KTt" firstAttribute="leading" secondItem="Zl4-4d-xhX" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="7nZ-Vb-NoR"/>
                             <constraint firstItem="kTB-9O-2BW" firstAttribute="centerX" secondItem="0rt-90-Pb4" secondAttribute="centerX" type="default" id="D9A-aU-ybZ"/>
                             <constraint firstItem="U0A-sa-M8s" firstAttribute="top" secondItem="7OZ-dy-cEQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ezn-KC-3cG"/>
                             <constraint firstAttribute="bottom" secondItem="0rt-90-Pb4" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Gku-yF-wF9"/>
-                            <constraint firstItem="Ry2-NN-Z7D" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="131" id="IdP-0w-x31"/>
-                            <constraint firstItem="Zl4-4d-xhX" firstAttribute="leading" secondItem="Ry2-NN-Z7D" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Kpy-0p-R6i"/>
+                            <constraint firstItem="Zl4-4d-xhX" firstAttribute="bottom" secondItem="Ry2-NN-Z7D" secondAttribute="bottom" type="default" id="Kqb-KM-gJ2"/>
                             <constraint firstItem="Occ-Zd-LSZ" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="L4f-7O-feE"/>
-                            <constraint firstItem="Zl4-4d-xhX" firstAttribute="top" secondItem="5" secondAttribute="top" constant="304" id="LKH-nW-vwo"/>
-                            <constraint firstItem="qm3-x5-KTt" firstAttribute="top" secondItem="5" secondAttribute="top" constant="188" id="M14-QU-wiu"/>
+                            <constraint firstItem="Zl4-4d-xhX" firstAttribute="top" secondItem="5" secondAttribute="top" constant="216" id="L5u-Ix-rKe"/>
                             <constraint firstItem="U0A-sa-M8s" firstAttribute="trailing" secondItem="7OZ-dy-cEQ" secondAttribute="trailing" type="default" id="MLc-lR-ZBZ"/>
                             <constraint firstItem="Nzn-Py-O4h" firstAttribute="bottom" secondItem="JvI-Gp-MAf" secondAttribute="bottom" type="default" id="MQB-eI-yf8"/>
                             <constraint firstItem="Gff-qC-gA5" firstAttribute="top" secondItem="5" secondAttribute="top" constant="7" id="O55-4a-Kfe"/>
@@ -195,7 +197,9 @@ Orono, ME</string>
                             <constraint firstItem="7OZ-dy-cEQ" firstAttribute="leading" secondItem="Gff-qC-gA5" secondAttribute="leading" type="default" id="RNi-J8-jT0"/>
                             <constraint firstItem="rzM-Py-I43" firstAttribute="bottom" secondItem="a3p-IS-nEg" secondAttribute="bottom" type="default" id="Szx-hJ-7ci"/>
                             <constraint firstItem="Nzn-Py-O4h" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="TxZ-a9-YOQ"/>
-                            <constraint firstItem="Ry2-NN-Z7D" firstAttribute="top" secondItem="5" secondAttribute="top" constant="299" id="YXb-5F-VdG"/>
+                            <constraint firstItem="qm3-x5-KTt" firstAttribute="top" secondItem="Zl4-4d-xhX" secondAttribute="top" type="default" id="UKQ-yb-8Gp"/>
+                            <constraint firstItem="qm3-x5-KTt" firstAttribute="centerY" secondItem="3qf-4e-Cm7" secondAttribute="centerY" type="default" id="UQJ-z0-QFb"/>
+                            <constraint firstItem="Zl4-4d-xhX" firstAttribute="top" secondItem="Ry2-NN-Z7D" secondAttribute="top" type="default" id="Zxf-af-e3G"/>
                             <constraint firstItem="fdN-GS-3MA" firstAttribute="trailing" secondItem="3qf-4e-Cm7" secondAttribute="trailing" type="default" id="cuD-UE-IMJ"/>
                             <constraint firstItem="7OZ-dy-cEQ" firstAttribute="centerY" secondItem="JvI-Gp-MAf" secondAttribute="centerY" type="default" id="e0b-7N-yc4"/>
                             <constraint firstItem="U0A-sa-M8s" firstAttribute="leading" secondItem="7OZ-dy-cEQ" secondAttribute="leading" type="default" id="kca-il-NHb"/>
@@ -204,7 +208,7 @@ Orono, ME</string>
                             <constraint firstItem="URC-31-eHY" firstAttribute="top" secondItem="Occ-Zd-LSZ" secondAttribute="top" type="default" id="nqJ-1B-hlx"/>
                             <constraint firstItem="rzM-Py-I43" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="sl7-wG-kuM"/>
                             <constraint firstItem="Gff-qC-gA5" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="12" id="tPW-3T-BeI"/>
-                            <constraint firstItem="3qf-4e-Cm7" firstAttribute="top" secondItem="5" secondAttribute="top" constant="94" id="upn-sl-j5e"/>
+                            <constraint firstItem="Zl4-4d-xhX" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="212" id="vQ8-XL-K2a"/>
                             <constraint firstItem="fdN-GS-3MA" firstAttribute="top" secondItem="5" secondAttribute="top" constant="6" id="wN8-iv-vsk"/>
                             <constraint firstItem="a3p-IS-nEg" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="y8G-kd-SU3"/>
                             <constraint firstItem="JvI-Gp-MAf" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="232" id="zan-mq-wHO"/>
@@ -491,10 +495,72 @@ Orono, ME</string>
     </scenes>
     <resources>
         <image name="213.tiff" width="181" height="72"/>
+        <image name="Default@2x.png" width="640" height="960"/>
         <image name="generic_user_image.jpg" width="200" height="200"/>
         <image name="logo-red-riots-jpeg1.jpg" width="434" height="205"/>
         <image name="schoolname.gif" width="253" height="88"/>
     </resources>
+    <classes>
+        <class className="BlogRssParser" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlogRssParser.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="refresh" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rssParser" candidateClass="BlogRssParser"/>
+                <relationship kind="outlet" name="temperature" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="upcomingView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="weatherCondition" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weatherImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordpresstableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="youtubeTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ViewController1" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController1.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ViewController2" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController2.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView1" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ViewController3" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController3.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ViewController5" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController5.h"/>
+            <relationships>
+                <relationship kind="outlet" name="staffDirectory" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ViewController6" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController6.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView2" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ViewController7" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController7.h"/>
+            <relationships>
+                <relationship kind="outlet" name="coursesTaught" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="teacherBio" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="teacherEmail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="teacherImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="teacherPhone" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

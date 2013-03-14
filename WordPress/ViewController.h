@@ -17,7 +17,6 @@
 #import "CalanderData.h"
 #import <Foundation/NSJSONSerialization.h>
 #import <EventKit/EventKit.h>
-#import "ISO8601DateFormatter.h"
 #import "RssFunAppDelegate.h"
 
 @class BlogRssParser;
@@ -46,7 +45,6 @@
 @property (retain, nonatomic) IBOutlet UIImageView *weatherImage;
 @property(nonatomic,retain) NSMutableData*weatherInfo;
 @property (retain, nonatomic) IBOutlet UILabel *temperature;
--(void)toggleToolBarButtons:(BOOL)newState;
 -(void)LoadCalendarData;
 -(void)AddEventToCalendar;
 @end
