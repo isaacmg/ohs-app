@@ -35,4 +35,22 @@
     [_donJoseph addObject:emailAddress];
     [_donJoseph addObject:imageUrl];
 }
+-(void)getinfoMoriarty
+{
+    _claireMoriarty=[[NSMutableArray alloc]init];
+    NSString*shortBio=@"Part of the joy, the thrill, that propels young people off to school is discovering, Oh, this is how other people conduct their lives. This is what other people do. This is how they think. For that reason, I believe that 'reading and writing should float on a sea of talk.' I do my best to foster classroom discussion that, however informal it might seem, goes somewhere. The idea is to provide students with models of good thinking, even instruction in the process of thinking, and certainly time to practice thinking through exchanges with others in class.I hold degrees in English and Microbiology and continue my apprenticeship in hockey.";
+    NSString*coursesTaught=@"(AP English Language and Composition, Nonfiction, 20th Century Classics, Women and Literature, Introduction to Language and Literature,  Journalism, English 9, Expository Writing, Comparative Literature";
+    NSString*phoneNumber=@"207-866-4916-318";
+    NSString*emailAddress=@"cmoriarty@riversidersu.org";
+    NSString*imageUrl=@"None at the moment";
+    [_claireMoriarty addObject:shortBio];
+    [_claireMoriarty addObject:coursesTaught];
+    [_claireMoriarty addObject:phoneNumber];
+    [_claireMoriarty addObject:emailAddress];
+    [_claireMoriarty addObject:imageUrl];
+}
+-(void)getInfoLuthin
+{
+    
+}
 @end

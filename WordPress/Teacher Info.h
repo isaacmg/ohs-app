@@ -12,8 +12,14 @@
 @property (nonatomic,retain)NSMutableArray*jimBulteel;
 @property (nonatomic, retain)NSMutableArray*donJoseph;
 @property (nonatomic, retain)NSMutableArray*claireMoriarty;
+@property (nonatomic, retain)NSMutableArray*chrisLuthin; 
 @property (nonatomic, retain)NSMutableArray*williamCowan;
 @property (nonatomic,retain)NSMutableArray*chrisCrocker;
 -(void)getInfoBulteel;
 -(void)getInfoJoseph;
+-(void)getinfoMoriarty;
+-(void)getInfoLuthin;
+-(void)getInfoCrocker;
+-(void)getInfoCowan; 
+
 @end
