@@ -15,11 +15,19 @@
 @property (nonatomic, retain)NSMutableArray*chrisLuthin; 
 @property (nonatomic, retain)NSMutableArray*williamCowan;
 @property (nonatomic,retain)NSMutableArray*chrisCrocker;
+@property (nonatomic, retain)NSMutableArray*jessicaBarnes;
+@property (nonatomic, retain)NSMutableArray*waldoCabellero;
+@property (nonatomic, retain)NSMutableArray*terryHenry;
+@property (nonatomic, retain)NSMutableArray*hodgon;
 -(void)getInfoBulteel;
 -(void)getInfoJoseph;
 -(void)getinfoMoriarty;
 -(void)getInfoLuthin;
 -(void)getInfoCrocker;
--(void)getInfoCowan; 
+-(void)getInfoCowan;
+-(void)getinfoBarnes;
+-(void)getInfoCabellero;
+-(void)getInfoHenry;
+-(void)getInfoHogdon; 
 
 @end

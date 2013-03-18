@@ -47,7 +47,6 @@
 		6ACBDA1C16E2981E00CDFD06 /* Teacher Info.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACBDA1B16E2981E00CDFD06 /* Teacher Info.m */; };
 		6ADE002816C9A34A00077594 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADE002716C9A34A00077594 /* CFNetwork.framework */; };
 		6ADE002A16C9A35B00077594 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADE002916C9A35A00077594 /* EventKit.framework */; };
-		6ADE00A216C9C68500077594 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE00A116C9C68500077594 /* ISO8601DateFormatter.m */; };
 		6ADEFD6716C33EE900077594 /* schoolname.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6ADEFD6616C33EE900077594 /* schoolname.gif */; };
 		6ADEFD6D16C33F8100077594 /* 213.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 6ADEFD6C16C33F8100077594 /* 213.tiff */; };
 		6ADEFEC916C74E0500077594 /* CalanderData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADEFEC816C74E0400077594 /* CalanderData.m */; };
@@ -486,8 +485,6 @@
 		6ACBDA1B16E2981E00CDFD06 /* Teacher Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Teacher Info.m"; path = "../WordPress/Teacher Info.m"; sourceTree = "<group>"; };
 		6ADE002716C9A34A00077594 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6ADE002916C9A35A00077594 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		6ADE00A016C9C68400077594 /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
-		6ADE00A116C9C68500077594 /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601DateFormatter.m; sourceTree = "<group>"; };
 		6ADEFD6616C33EE900077594 /* schoolname.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = schoolname.gif; sourceTree = "<group>"; };
 		6ADEFD6C16C33F8100077594 /* 213.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 213.tiff; sourceTree = "<group>"; };
 		6ADEFEC716C74E0400077594 /* CalanderData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalanderData.h; path = ../WordPress/CalanderData.h; sourceTree = "<group>"; };
@@ -592,8 +589,6 @@
 			isa = PBXGroup;
 			children = (
 				6ACBDA1816E2917100CDFD06 /* generic_user_image.jpg */,
-				6ADE00A016C9C68400077594 /* ISO8601DateFormatter.h */,
-				6ADE00A116C9C68500077594 /* ISO8601DateFormatter.m */,
 				6ADEFD6C16C33F8100077594 /* 213.tiff */,
 				6ADEFD6616C33EE900077594 /* schoolname.gif */,
 				6AAD9D8D16E0F95C007BB843 /* icon.jpg */,
@@ -1170,7 +1165,6 @@
 				6A41CDDF16C1FB1A0065D068 /* ViewController3.m in Sources */,
 				6A41CDE216C28E910065D068 /* ViewController6.m in Sources */,
 				6ADEFEC916C74E0500077594 /* CalanderData.m in Sources */,
-				6ADE00A216C9C68500077594 /* ISO8601DateFormatter.m in Sources */,
 				6A27058016CEB8FA0019FCB0 /* ViewController5.m in Sources */,
 				6ACBDA1316E278E200CDFD06 /* ViewController7.m in Sources */,
 				6ACBDA1C16E2981E00CDFD06 /* Teacher Info.m in Sources */,

@@ -53,6 +53,14 @@
         [self loadTeacherData:moriarty];
         
     }
+    else if ([_teacherName isEqualToString:@"Christine Crocker"])
+    {
+        [teacherInformation getInfoCrocker];
+        NSArray*teacher=teacherInformation.chrisCrocker;
+        [self loadTeacherData:teacher];
+        
+    }
+
 
 }
 -(void)loadTeacherData:(NSArray *)teacherFinal

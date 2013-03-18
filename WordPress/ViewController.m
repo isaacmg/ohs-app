@@ -13,7 +13,7 @@
 @synthesize url;
 @synthesize feed;
 @synthesize selectedRow; 
-
+#pragma mark View Life Cycle  
 - (void)viewDidLoad {
 	[super viewDidLoad];
     self.view.backgroundColor = [UIColor  colorWithPatternImage:[UIImage imageNamed:@"back.png"]];
@@ -53,7 +53,6 @@
     UIDeviceOrientation interface = [[UIDevice currentDevice] orientation];
     if(((interface == UIInterfaceOrientationLandscapeLeft) ||
         (interface == UIInterfaceOrientationLandscapeRight))){
-        //Just so your table is not at a random place in your view
         [self landscapeLayout];
     }else if(((interface == UIInterfaceOrientationPortrait) ||
               (interface == UIInterfaceOrientationPortraitUpsideDown))){
@@ -84,7 +83,7 @@
     _youtubeTableView.hidden=YES;
     CGRect high=CGRectMake(2, 230, _refresh.frame.size.width, _refresh.frame.size.height-2);
     [_refresh setFrame: high];
-    _weatherImage.frame=CGRectMake(5, 15, _weatherImage.frame.size.width, _weatherImage.frame.size.height);
+    _weatherImage.frame=CGRectMake(5, 15-5, _weatherImage.frame.size.width, _weatherImage.frame.size.height);
 
     _temperature.frame=CGRectMake(5, 48, _temperature.frame.size.width, _temperature.frame.size.height);
     _weatherCondition.frame=CGRectMake(5, 59, _weatherCondition.frame.size.width, _weatherCondition.frame.size.height);
@@ -95,6 +94,10 @@
     _tableView.frame=CGRectMake(0,193,_tableView.frame.size.width,_tableView.frame.size.height);
     _refresh.frame=CGRectMake(263,3,_refresh.frame.size.width,_refresh.frame.size.height);
     _youtubeTableView.hidden=NO;
+    _weatherCondition.frame=CGRectMake(8,48, _weatherCondition.frame.size.width, _weatherCondition.frame.size.height);
+    _temperature.frame=CGRectMake(8,63, _temperature.frame.size.width,_temperature.frame.size.height);
+        _weatherImage.frame=CGRectMake(8,18,_weatherImage.frame.size.width-9,_weatherImage.frame.size.height-9);
+        
 }
     
 }
@@ -124,6 +127,7 @@ finishedWithFeed:(GDataFeedBase *)aFeed
 	[alert release];
 }
 //UITableView Info
+#pragma mark UITableView Data 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
      if (tableView == self.wordpresstableView)
      {
@@ -195,17 +199,48 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         return cell;
           }
 }
-//Calander Functions 
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+   if (tableView==self.wordpresstableView)
+   {
+    ViewController1*newview = [self.storyboard instantiateViewControllerWithIdentifier:@"pushedView"];
+    url=[[[[self rssParser]rssItems]objectAtIndex:indexPath.row]linkUrl];
+    NSLog(@"NSString *string = \n%@", url);
+    newview.passedString =url;
+    [self.navigationController pushViewController:newview animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+   }
+    else if (tableView==self.youtubeTableView)
+    {
+        ViewController3*newyt = [self.storyboard instantiateViewControllerWithIdentifier:@"pushed2"];
+
+        GDataEntryBase *entry2 = [[feed entries] objectAtIndex:indexPath.row];
+        NSArray *contents = [[(GDataEntryYouTubeVideo *)entry2 mediaGroup] mediaContents];
+        NSURL*s5=[NSURL URLWithString:[[contents objectAtIndex:0] URLString]];
+        newyt.passedString2=s5; 
+        
+        [self.navigationController pushViewController:newyt animated:YES];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+    }
+    else if (tableView==self.upcomingView)
+    {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    }
+}
+#pragma mark Calendar Functions 
+//Calander Functions 
 -(void)LoadCalendarData
 {
-      
+    
     if([self internetCheck]==YES)
     {
-    dispatch_sync(kBgQueue, ^{
-        NSData* data = [NSData dataWithContentsOfURL: kGoogleCalendarURL];
-        [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
-        NSLog(@"Last Game");});
+        dispatch_sync(kBgQueue, ^{
+            NSData* data = [NSData dataWithContentsOfURL: kGoogleCalendarURL];
+            [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
+            NSLog(@"Last Game");});
     }
     else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Connectivity" message:@"Unable to download data. Please check if you are connected to internet."delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -240,7 +275,6 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         
     }
 }
-//End Void functions Calander
 
 -(void)AddEventToCalendar
 {
@@ -262,35 +296,8 @@ finishedWithFeed:(GDataFeedBase *)aFeed
     [[self upcomingView]reloadData];
     
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-   if (tableView==self.wordpresstableView)
-   {
-    ViewController1*newview = [self.storyboard instantiateViewControllerWithIdentifier:@"pushedView"];
-    url=[[[[self rssParser]rssItems]objectAtIndex:indexPath.row]linkUrl];
-    NSLog(@"NSString *string = \n%@", url);
-    newview.passedString =url;
-    [self.navigationController pushViewController:newview animated:YES];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-   }
-    else if (tableView==self.youtubeTableView)
-    {
-        ViewController3*newyt = [self.storyboard instantiateViewControllerWithIdentifier:@"pushed2"];
-
-        GDataEntryBase *entry2 = [[feed entries] objectAtIndex:indexPath.row];
-        NSArray *contents = [[(GDataEntryYouTubeVideo *)entry2 mediaGroup] mediaContents];
-        NSURL*s5=[NSURL URLWithString:[[contents objectAtIndex:0] URLString]];
-        newyt.passedString2=s5; 
-        
-        [self.navigationController pushViewController:newyt animated:YES];
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        
-    }
-    else if (tableView==self.upcomingView)
-    {
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
-    }
-}
+//End Void functions Calander
+#pragma mark Weather
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     [_weatherInfo setLength:0];
