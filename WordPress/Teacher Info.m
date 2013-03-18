@@ -51,10 +51,22 @@
 }
 -(void)getInfoLuthin
 {
-    
+    _chrisLuthin=[[NSMutableArray alloc]init];
+    NSString*shortBio=@"Through Dramatic Literature, British Literature: The Bloody Tragedies and Bawdy Comedies of Shakespeare and Company)Mr. Luthin has two degrees in Theatre from UMaine - B.A (1984); M.A. (1994).  He has taught High School since 1988.  He has also taught Acting, Directing, Dramatic Literature and Theatre History at UMaine, and Interpersonal Communication and Public Speaking at University College, Bangor.";
+    NSString*coursesTaught=@"(Shakespeare and Company, American Cinema, British Literature, World Cinema, Twentieth Century Irish Literature, American Lit II, Speech and Drama, High Adventure, Expository Writing, Journalism , Comedy & Satire Through Dramatic Literature, British Literature: The Bloody Tragedies and Bawdy Comedies of Shakespeare and Company) ";
+    NSString*phoneNumber=@"207-866-4916-320";
+    NSString*emailAddress=@"cluthin@riversidersu.org";
+    NSString*imageUrl=@"None at the moment";
+    [_chrisLuthin addObject:shortBio];
+    [_chrisLuthin addObject:coursesTaught];
+    [_chrisLuthin addObject:phoneNumber];
+    [_chrisLuthin addObject:emailAddress];
+    [_chrisLuthin addObject:imageUrl];
 }
 -(void)getInfoCrocker
 {
+    _chrisCrocker=[[NSMutableArray alloc]init];
     
 }
+
 @end

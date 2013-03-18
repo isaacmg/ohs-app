@@ -36,19 +36,7 @@
         NSLog(@"failed");
     }
 }
--(void)viewDidAppear:(BOOL)animated
-{
-    UIDeviceOrientation interface = [[UIDevice currentDevice] orientation];
-    if(((interface == UIInterfaceOrientationLandscapeLeft) ||
-        (interface == UIInterfaceOrientationLandscapeRight))){
-        //Just so your table is not at a random place in your view
-        [self landscapeLayout];
-    }else if(((interface == UIInterfaceOrientationPortrait) ||
-              (interface == UIInterfaceOrientationPortraitUpsideDown))){
-        [self portraitLayout];
-    }
 
-}
 -(BOOL)internetCheck                   
 {
     NSError*error=nil;
@@ -62,7 +50,15 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    UIDeviceOrientation interface = [[UIDevice currentDevice] orientation];
+    if(((interface == UIInterfaceOrientationLandscapeLeft) ||
+        (interface == UIInterfaceOrientationLandscapeRight))){
+        //Just so your table is not at a random place in your view
+        [self landscapeLayout];
+    }else if(((interface == UIInterfaceOrientationPortrait) ||
+              (interface == UIInterfaceOrientationPortraitUpsideDown))){
+        [self portraitLayout];
+    }
     self.upcomingView.rowHeight = 80;
 }
 
@@ -83,11 +79,15 @@
     }
 }
 -(void)landscapeLayout
-{
-    _tableView.frame = CGRectMake(310,40,_tableView.frame.size.width, _tableView.frame.size.height);
+{   
+    _tableView.frame = CGRectMake(328,0,_tableView.frame.size.width-5, _tableView.frame.size.height+30);
     _youtubeTableView.hidden=YES;
     CGRect high=CGRectMake(2, 230, _refresh.frame.size.width, _refresh.frame.size.height-2);
     [_refresh setFrame: high];
+    _weatherImage.frame=CGRectMake(5, 15, _weatherImage.frame.size.width, _weatherImage.frame.size.height);
+
+    _temperature.frame=CGRectMake(5, 48, _temperature.frame.size.width, _temperature.frame.size.height);
+    _weatherCondition.frame=CGRectMake(5, 59, _weatherCondition.frame.size.width, _weatherCondition.frame.size.height);
 }
 -(void)portraitLayout
 {   if(UI_USER_INTERFACE_IDIOM() ==UIUserInterfaceIdiomPhone)

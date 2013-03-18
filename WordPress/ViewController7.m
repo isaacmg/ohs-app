@@ -41,6 +41,16 @@
     }
     else if ([_teacherName isEqualToString:@"Chris Luthin"])
     {
+        [teacherInformation getInfoLuthin];
+        NSArray*luthin=teacherInformation.chrisLuthin;
+        [self loadTeacherData:luthin];
+        
+    }
+    else if ([_teacherName isEqualToString:@"Claire Moriarty"])
+    {
+        [teacherInformation getinfoMoriarty];
+        NSArray*moriarty=teacherInformation.claireMoriarty;
+        [self loadTeacherData:moriarty];
         
     }
 
