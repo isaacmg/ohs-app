@@ -9,7 +9,7 @@
 #import "ViewController7.h"
 
 @implementation ViewController7
-
+#pragma mark View Life Cycle 
 - (void)viewDidLoad
 {   
     [super viewDidLoad];
@@ -23,11 +23,12 @@
 {   [self loadProperView];
     
 }
+#pragma mark Getting Teacher Data
 -(void)formatString
 {   Teacher_Info*teacherInformation = [[Teacher_Info alloc] init];
     
     NSLog(@"NSString*string=\n%@", _teacherName);
-    //Very reptititive code must be a better way of doing this. I was thinking of maybe searching the string and matching it to the function...But the problems is the string passed in doesn't exactly match the function (i.e. getinfoBulteel and Jim Bulteel).
+    //Very reptititive code must be a better way of doing this. I was thinking of maybe searching the string and matching it to the function...But the problems is the string passed in doesn't exactly match the function (i.e. getinfoBulteel and Jim Bulteel) So it seems like you would have to write some type associative key anyways.
     if ([_teacherName isEqualToString:@"Jim Bulteel"])
         {  [teacherInformation getInfoBulteel];
             NSArray*jim=teacherInformation.jimBulteel;

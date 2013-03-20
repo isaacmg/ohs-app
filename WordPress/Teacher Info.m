@@ -7,8 +7,9 @@
 //
 
 #import "Teacher Info.h"
-
 @implementation Teacher_Info
+
+#pragma mark English 
 -(void)getInfoBulteel
 {   _jimBulteel=[[NSMutableArray alloc]init];
     NSString*shortBio=@"Jim Bulteel has taught English at OHS for ten years. Prior to that he taught English and Drama to Dine (Navajo) students in New Mexico for nine years. He earned his Masters in Education from the University of Washington in Seattle, having arrived there from Sydney, Australia, where he taught history and multicultural for four years. He earned a BA from Oxford University, England in 1983.";
@@ -63,6 +64,7 @@
     [_chrisLuthin addObject:emailAddress];
     [_chrisLuthin addObject:imageUrl];
 }
+#pragma mark Fine Arts Teachers
 -(void)getinfoBarnes
 {
 
@@ -71,6 +73,24 @@
 {
     
 }
+-(void)getInfoHogdon
+{
+    
+}
+-(void)getInfoHenry
+{
+    
+}
+#pragma mark Guidance Counselers 
+-(void)getInfoBuehner
+{
+    
+}
+-(void)getInfoGunn
+{
+    
+}
+#pragma mark Language Teachers
 -(void)getInfoCrocker
 {
     _chrisCrocker=[[NSMutableArray alloc]init];
@@ -86,17 +106,61 @@
     [_chrisCrocker addObject:imageUrl];
     
 }
-
+-(void)getInfoHubbard
+{
+    
+}
+-(void)getInfoZhang
+{
+    
+}
+#pragma mark Math Teachers 
+-(void)getInfoHolmes
+{
+    
+}
+-(void)getInfoLibby
+{
+    
+}
+-(void)getInfoInnis
+{
+    
+}
+#pragma mark Gym Teachers
+-(void)getInfoKirpatrick
+{
+    
+}
+-(void)getInfoWinchester
+{
+    
+}
+-(void)getInfoArcher
+{
+    
+}
+#pragma mark Science Teachers
+-(void)getInfoBoyd
+{
+    
+}
+-(void)getInfoClay
+{
+    
+}
+-(void)getInfoNorrisl
+{
+    
+}
+-(void)getInfoOwen
+{
+    
+}
+#pragma mark Social Studies Teachers
 -(void)getInfoCowan
 {
     
 }
--(void)getInfoHogdon
-{
-    
-}
--(void)getInfoHenry
-{
-    
-}
+
 @end

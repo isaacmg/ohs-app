@@ -136,7 +136,6 @@
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
-
 -(void)dealloc{
 	self.currentItem = nil;
 	self.currentItemValue = nil;
