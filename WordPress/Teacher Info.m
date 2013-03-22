@@ -66,20 +66,19 @@
 }
 #pragma mark Fine Arts Teachers
 -(void)getinfoBarnes
-{
-
+{_jessicaBarnes=[[NSMutableArray alloc]init];
 }
 -(void)getInfoCabellero
 {
-    
+
 }
 -(void)getInfoHogdon
 {
-    
+    _steveHodgon=[[NSMutableArray alloc]init];
 }
 -(void)getInfoHenry
 {
-    
+    _terryHenry=[[NSMutableArray alloc]init];
 }
 #pragma mark Guidance Counselers 
 -(void)getInfoBuehner
@@ -127,6 +126,10 @@
 {
     
 }
+-(void)getInfoJelly
+{
+    
+}
 #pragma mark Gym Teachers
 -(void)getInfoKirpatrick
 {
@@ -159,6 +162,19 @@
 }
 #pragma mark Social Studies Teachers
 -(void)getInfoCowan
+{
+    
+}
+-(void)getInfoBaker
+{
+    
+}
+-(void)getInfoGoodall
+{
+    
+}
+#pragma mark Other Teachers
+-(void)getInfoCBoyd
 {
     
 }

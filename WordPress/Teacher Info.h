@@ -26,10 +26,17 @@
 @property (nonatomic, retain)NSMutableArray*heatherHolmes;
 @property (nonatomic, retain)NSMutableArray*margieInnis;
 @property (nonatomic, retain)NSMutableArray*chrisLibby;
+@property (nonatomic, retain)NSMutableArray*dickJelly; 
 @property (nonatomic, retain)NSMutableArray*mikeArcher;
 @property (nonatomic, retain)NSMutableArray*lesileWinchester;
 @property (nonatomic, retain)NSMutableArray*chadKirkpatrick;
 @property (nonatomic, retain)NSMutableArray*jeffOwen;
+@property (nonatomic, retain)NSMutableArray*johnNorris;
+@property (nonatomic, retain)NSMutableArray*cynthaniaClay;
+@property (nonatomic, retain)NSMutableArray*lesileBoyd;
+@property (nonatomic, retain)NSMutableArray*dBakes;
+@property (nonatomic,retain)NSMutableArray*shanaGodall;
+@property (nonatomic, retain)NSMutableArray*christieBoyd; 
 -(void)getInfoBulteel;
 -(void)getInfoJoseph;
 -(void)getinfoMoriarty;
@@ -47,6 +54,7 @@
 -(void)getInfoHolmes; 
 -(void)getInfoLibby;
 -(void)getInfoInnis;
+-(void)getInfoJelly; 
 -(void)getInfoArcher;
 -(void)getInfoWinchester;
 -(void)getInfoKirpatrick;
@@ -54,6 +62,7 @@
 -(void)getInfoClay;
 -(void)getInfoNorrisl; 
 -(void)getInfoOwen;
-
-
+-(void)getInfoBaker; 
+-(void)getInfoGoodall;
+-(void)getInfoCBoyd;
 @end

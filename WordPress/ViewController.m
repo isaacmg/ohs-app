@@ -78,25 +78,26 @@
     }
 }
 -(void)landscapeLayout
-{   
-    _tableView.frame = CGRectMake(328,0,_tableView.frame.size.width-5, _tableView.frame.size.height+30);
+{   if(UI_USER_INTERFACE_IDIOM() ==UIUserInterfaceIdiomPhone)
+    {
+    _tableView.frame = CGRectMake(328,0,_tableView.frame.size.width-5, _tableView.frame.size.height+50);
     _youtubeTableView.hidden=YES;
     CGRect high=CGRectMake(2, 230, _refresh.frame.size.width, _refresh.frame.size.height-2);
     [_refresh setFrame: high];
     _weatherImage.frame=CGRectMake(5, 15-5, _weatherImage.frame.size.width, _weatherImage.frame.size.height);
-
     _temperature.frame=CGRectMake(5, 48, _temperature.frame.size.width, _temperature.frame.size.height);
     _weatherCondition.frame=CGRectMake(5, 59, _weatherCondition.frame.size.width, _weatherCondition.frame.size.height);
+    }
 }
 -(void)portraitLayout
 {   if(UI_USER_INTERFACE_IDIOM() ==UIUserInterfaceIdiomPhone)
-    {
-    _tableView.frame=CGRectMake(0,193,_tableView.frame.size.width,_tableView.frame.size.height);
+{   int w=164;
+    _tableView.frame=CGRectMake(0,193,w,_tableView.frame.size.height);
     _refresh.frame=CGRectMake(263,3,_refresh.frame.size.width,_refresh.frame.size.height);
     _youtubeTableView.hidden=NO;
     _weatherCondition.frame=CGRectMake(8,48, _weatherCondition.frame.size.width, _weatherCondition.frame.size.height);
     _temperature.frame=CGRectMake(8,63, _temperature.frame.size.width,_temperature.frame.size.height);
-        _weatherImage.frame=CGRectMake(8,18,_weatherImage.frame.size.width-9,_weatherImage.frame.size.height-9);
+        _weatherImage.frame=CGRectMake(8,18,_weatherImage.frame.size.width,_weatherImage.frame.size.height);
         
 }
     
@@ -115,7 +116,7 @@ finishedWithFeed:(GDataFeedBase *)aFeed
 	self.feed = (GDataFeedYouTubeVideo *)aFeed;
     
 	[self.youtubeTableView reloadData];
-    
+
     
 }
 
