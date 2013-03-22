@@ -735,6 +735,7 @@ Orono, ME</string>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="refresh:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="refresh" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="rssParser" candidateClass="BlogRssParser"/>
                 <relationship kind="outlet" name="temperature" candidateClass="UILabel"/>
