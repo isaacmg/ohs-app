@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface Teacher_Info : NSObject
+{
+    
+}
 @property (nonatomic,retain)NSMutableArray*jimBulteel;
 @property (nonatomic, retain)NSMutableArray*donJoseph;
 @property (nonatomic, retain)NSMutableArray*claireMoriarty;

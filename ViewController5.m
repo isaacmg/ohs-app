@@ -26,7 +26,7 @@
     NSDictionary*foreignStudies=[NSDictionary dictionaryWithObject:foreignTeachers forKey:@"Staff Directory"];
     NSArray*mathTeachers=[NSArray arrayWithObjects:@"Heather Holmes",@"Margie Innis",@"Richard Jelly",@"Chris Libby", nil];
     NSDictionary*math=[NSDictionary dictionaryWithObject:mathTeachers forKey:@"Staff Directory"];
-    NSArray*gymTeachers=[NSArray arrayWithObjects:@"Mike Archer",@"Chad Kirpatrick",@"Lesile Winchester",nil];
+    NSArray*gymTeachers=[NSArray arrayWithObjects:@"Mike Archer",@"Chad Kirkpatrick",@"Lesile Winchester",nil];
     NSDictionary*gym=[NSDictionary dictionaryWithObject:gymTeachers forKey:@"Staff Directory"];
     NSArray*socialTeachers=[NSArray arrayWithObjects:@"William Cowan",@"Dan Baker",@"Shana Goodall", nil];
     NSDictionary*socialStudies=[NSDictionary dictionaryWithObject:socialTeachers forKey:@"Staff Directory"];
@@ -43,7 +43,7 @@
     [_teacherData addObject:scienceStudies];
     [_teacherData addObject:socialStudies];
 }
--(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {   [self loadProperView];
     
 }
@@ -135,7 +135,6 @@
            ViewController7 *aViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"teacherDetail"];
            aViewController.teacherName=entry2;
            [self.navigationController pushViewController:aViewController animated:YES];
-           
        }
    
 }

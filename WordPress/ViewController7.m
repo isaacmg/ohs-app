@@ -54,6 +54,34 @@
         [self loadTeacherData:moriarty];
         
     }
+    else if ([_teacherName isEqualToString:@"Jessica Barnes"])
+    {
+        [teacherInformation getinfoBarnes];
+        NSArray*teacher=teacherInformation.jessicaBarnes;
+        [self loadTeacherData:teacher];
+        
+    }
+    else if ([_teacherName isEqualToString:@"Waldo Cabellero"])
+    {
+        [teacherInformation getInfoCabellero];
+        NSArray*teacher=teacherInformation.waldoCabellero;
+        [self loadTeacherData:teacher];
+        
+    }
+    else if ([_teacherName isEqualToString:@"Terry Henry"])
+    {
+        [teacherInformation getInfoHenry];
+        NSArray*teacher=teacherInformation.terryHenry;
+        [self loadTeacherData:teacher];
+        
+    }
+    else if ([_teacherName isEqualToString:@"Steve Hogdon"])
+    {
+        [teacherInformation getInfoHogdon];
+        NSArray*teacher=teacherInformation.steveHodgon;
+        [self loadTeacherData:teacher];
+        
+    }
     else if ([_teacherName isEqualToString:@"Christine Crocker"])
     {
         [teacherInformation getInfoCrocker];
@@ -61,7 +89,103 @@
         [self loadTeacherData:teacher];
         
     }
+    else if ([_teacherName isEqualToString:@"Jing Zhang"])
+    {
+        [teacherInformation getInfoZhang];
+        NSArray*teacher=teacherInformation.jingZhang;
+        [self loadTeacherData:teacher];
+    }
+    else if ([_teacherName isEqualToString:@"Jae Hubbard"])
+    {
+        [teacherInformation getInfoHubbard];
+        NSArray*teacher=teacherInformation.jaeHubbard;
+        [self loadTeacherData:teacher];
+    }
+    else if ([_teacherName isEqualToString:@"Heather Holmes"])
+    {
+        [teacherInformation getInfoHolmes];
+        NSArray*teacher=teacherInformation.heatherHolmes;
+        [self loadTeacherData:teacher];
+    }
+    else if ([_teacherName isEqualToString:@"Chris Libby"])
+    {
+        [teacherInformation getInfoLibby];
+        NSArray*teacher=teacherInformation.chrisLibby;
+        [self loadTeacherData:teacher];
+    }
+    else if ([_teacherName isEqualToString:@"Margie Innis"])
+    {
+        [teacherInformation getInfoInnis];
+        NSArray*teacher=teacherInformation.margieInnis;
+        [self loadTeacherData:teacher];
+    }
+    else if ([_teacherName isEqualToString:@"Richard Jelly"])
+    {
+        [teacherInformation getInfoJelly];
+        NSArray*teacher=teacherInformation.dickJelly;
+        [self loadTeacherData:teacher];
+    }
+    else if ([_teacherName isEqualToString:@"Chad Kirkpatrick"])
+    {
+        [teacherInformation getInfoKirpatrick];
+        NSArray*teacher=teacherInformation.chadKirkpatrick;
+        [self loadTeacherData:teacher];
+    }
+    else if ([_teacherName isEqualToString:@"Mike Archer"])
+    {
+        [teacherInformation getInfoArcher];
+        NSArray*teacher=teacherInformation.mikeArcher;
+        [self loadTeacherData:teacher];
+    }
 
+    else if ([_teacherName isEqualToString:@"Lesile Winchester"])
+    {
+        [teacherInformation getInfoWinchester];
+        NSArray*teacher=teacherInformation.lesileWinchester;
+        [self loadTeacherData:teacher];
+    }
+    else if ([_teacherName isEqualToString:@"Lesile Boyd"])
+    {
+        [teacherInformation getInfoBoyd];
+        NSArray*teacher=teacherInformation.lesileBoyd;
+        [self loadTeacherData:teacher];
+    }
+    else if ([_teacherName isEqualToString:@"Cynthania Clay"])
+    {
+        [teacherInformation getInfoClay];
+        NSArray*teacher=teacherInformation.cynthaniaClay;
+        [self loadTeacherData:teacher];
+    }
+    else if ([_teacherName isEqualToString:@"John Norris"])
+    {
+        [teacherInformation getInfoNorrisl];
+        NSArray*teacher=teacherInformation.johnNorris;
+        [self loadTeacherData:teacher];
+    }
+    else if ([_teacherName isEqualToString:@"Jeff Owen"])
+    {
+        [teacherInformation getInfoOwen];
+        NSArray*teacher=teacherInformation.jeffOwen;
+        [self loadTeacherData:teacher];
+    }
+    else if ([_teacherName isEqualToString:@"William Cowan"])
+    {
+        [teacherInformation getInfoCowan];
+        NSArray*teacher=teacherInformation.williamCowan;
+        [self loadTeacherData:teacher];
+    }
+    else if ([_teacherName isEqualToString:@"Shana Goodall"])
+    {
+        [teacherInformation getInfoGoodall];
+        NSArray*teacher=teacherInformation.shanaGodall;
+        [self loadTeacherData:teacher];
+    }
+    else if ([_teacherName isEqualToString:@"Dan Baker"])
+    {
+        [teacherInformation getInfoBaker];
+        NSArray*teacher=teacherInformation.dBakes;
+        [self loadTeacherData:teacher];
+    }
 
 }
 -(void)loadTeacherData:(NSArray *)teacherFinal
@@ -74,19 +198,19 @@
 
 -(void)loadProperView
 {
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-       {
+   if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+   {
     UIDeviceOrientation interface = [[UIDevice currentDevice] orientation];
     if(((interface == UIInterfaceOrientationLandscapeLeft) ||
         (interface == UIInterfaceOrientationLandscapeRight))){
-        CGRect rectText=CGRectMake(170, 30, self.teacherBio.frame.size.width-20, self.teacherBio.frame.size.height);
+        CGRect rectText=CGRectMake(200, 30, self.teacherBio.frame.size.width-20, self.teacherBio.frame.size.height);
         _teacherBio.frame=rectText;
     }else if(((interface == UIInterfaceOrientationPortrait) ||
               (interface == UIInterfaceOrientationPortraitUpsideDown))){
-        CGRect rectText=CGRectMake(0, 200, self.teacherBio.frame.size.width-20, self.teacherBio.frame.size.height);
+        CGRect rectText=CGRectMake(0, 220, 320, 208);
         _teacherBio.frame=rectText;
     }
-       }
+    }
     
 }
 

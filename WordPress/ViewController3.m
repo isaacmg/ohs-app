@@ -7,16 +7,14 @@
 //
 
 #import "ViewController3.h"
-
-@interface ViewController3 ()
-
-@end
-
 @implementation ViewController3
 @synthesize passedString2;
 @synthesize webView=_webView;
-
-- (void)viewDidLoad
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [_webView stopLoading];
+}
+- (void)viewWillAppear:(BOOL)animated
 {
     
      self.webView.backgroundColor = [UIColor  colorWithPatternImage:[UIImage imageNamed:@"back.png"]];

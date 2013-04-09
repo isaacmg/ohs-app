@@ -21,7 +21,8 @@
     NSURLRequest *httpRequest = [NSURLRequest requestWithURL:fullUrl];
     [_webView loadRequest:httpRequest];
 }
--(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+
 {   [self loadProperView];
    
        }

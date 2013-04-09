@@ -45,6 +45,7 @@
 		6ACBDA1316E278E200CDFD06 /* ViewController7.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACBDA1216E278E100CDFD06 /* ViewController7.m */; };
 		6ACBDA1916E2917100CDFD06 /* generic_user_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6ACBDA1816E2917100CDFD06 /* generic_user_image.jpg */; };
 		6ACBDA1C16E2981E00CDFD06 /* Teacher Info.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACBDA1B16E2981E00CDFD06 /* Teacher Info.m */; };
+		6AD356521701C8A800875A86 /* dayInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD356511701C8A800875A86 /* dayInformation.m */; };
 		6ADE002816C9A34A00077594 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADE002716C9A34A00077594 /* CFNetwork.framework */; };
 		6ADE002A16C9A35B00077594 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADE002916C9A35A00077594 /* EventKit.framework */; };
 		6ADEFD6716C33EE900077594 /* schoolname.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6ADEFD6616C33EE900077594 /* schoolname.gif */; };
@@ -483,6 +484,8 @@
 		6ACBDA1816E2917100CDFD06 /* generic_user_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = generic_user_image.jpg; sourceTree = "<group>"; };
 		6ACBDA1A16E2981E00CDFD06 /* Teacher Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Teacher Info.h"; path = "../WordPress/Teacher Info.h"; sourceTree = "<group>"; };
 		6ACBDA1B16E2981E00CDFD06 /* Teacher Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Teacher Info.m"; path = "../WordPress/Teacher Info.m"; sourceTree = "<group>"; };
+		6AD356501701C8A800875A86 /* dayInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dayInformation.h; sourceTree = "<group>"; };
+		6AD356511701C8A800875A86 /* dayInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dayInformation.m; sourceTree = "<group>"; };
 		6ADE002716C9A34A00077594 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6ADE002916C9A35A00077594 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		6ADEFD6616C33EE900077594 /* schoolname.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = schoolname.gif; sourceTree = "<group>"; };
@@ -632,11 +635,13 @@
 		6A41CB8B16BF750A0065D068 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6A41CC9216C1E6D40065D068 /* Headers */,
 				6ADEFEC716C74E0400077594 /* CalanderData.h */,
 				6ADEFEC816C74E0400077594 /* CalanderData.m */,
-				6A41CC9216C1E6D40065D068 /* Headers */,
 				6A41CB8C16BF750A0065D068 /* BlogRss.h */,
 				6ACBDA1A16E2981E00CDFD06 /* Teacher Info.h */,
+				6AD356501701C8A800875A86 /* dayInformation.h */,
+				6AD356511701C8A800875A86 /* dayInformation.m */,
 				6ACBDA1B16E2981E00CDFD06 /* Teacher Info.m */,
 				6A41CB8D16BF750A0065D068 /* BlogRss.m */,
 				6A41CB8E16BF750A0065D068 /* BlogRssParser.h */,
@@ -1169,6 +1174,7 @@
 				6ACBDA1316E278E200CDFD06 /* ViewController7.m in Sources */,
 				6ACBDA1C16E2981E00CDFD06 /* Teacher Info.m in Sources */,
 				6A29F22016E9182C000F3965 /* ViewController8.m in Sources */,
+				6AD356521701C8A800875A86 /* dayInformation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

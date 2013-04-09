@@ -28,10 +28,12 @@
     [self internetCheck];
 	[self LoadCalendarData];
 	[service fetchFeedWithURL:feedURL delegate:self didFinishSelector:@selector(request:finishedWithFeed:error:)];
-    NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.wunderground.com/api/eae1e849db26ed92/conditions/q/ME/Orono.json"]];
-    NSURLConnection *theConnection=[[NSURLConnection alloc]initWithRequest:theRequest delegate:self];
     if([self internetCheck]){
         _weatherInfo = [[NSMutableData alloc] init];
+        NSURL*calanderUrl=[NSURL  URLWithString:@"http://api.wunderground.com/api/eae1e849db26ed92/conditions/q/ME/Orono.json"];
+        _weatherInfo = [NSData dataWithContentsOfURL:calanderUrl];
+        [self calanderDataReady];
+        
     } else {
         NSLog(@"failed");
     }
@@ -40,7 +42,7 @@
 -(BOOL)internetCheck                   
 {
     NSError*error=nil;
-    NSURL*googleURL= [NSURL URLWithString:@"http://www.google.com"];
+    NSURL*googleURL= [NSURL URLWithString:@"http://api.wunderground.com/api/eae1e849db26ed92/conditions/q/ME/Orono.json"];
     NSString*checkError=[NSString stringWithContentsOfURL:googleURL encoding:NSUTF8StringEncoding error:&error];
     return ( checkError != NULL ) ? YES : NO;
 }
@@ -50,7 +52,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    UIDeviceOrientation interface = [[UIDevice currentDevice] orientation];
+    UIDeviceOrientation interface = [UIApplication sharedApplication].statusBarOrientation;
+    
     if(((interface == UIInterfaceOrientationLandscapeLeft) ||
         (interface == UIInterfaceOrientationLandscapeRight))){
         [self landscapeLayout];
@@ -65,41 +68,69 @@
 {
     return YES;
 }
--(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    UIDeviceOrientation interface = [[UIDevice currentDevice] orientation];
-    if(((interface == UIInterfaceOrientationLandscapeLeft) ||
-        (interface == UIInterfaceOrientationLandscapeRight))){
+    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
         //Just so your table is not at a random place in your view
         [self landscapeLayout];
-    }else if(((interface == UIInterfaceOrientationPortrait) ||
-              (interface == UIInterfaceOrientationPortraitUpsideDown))){
+    }else if(UIInterfaceOrientationIsPortrait(toInterfaceOrientation)){
         [self portraitLayout];
     }
+    
 }
 -(void)landscapeLayout
 {   if(UI_USER_INTERFACE_IDIOM() ==UIUserInterfaceIdiomPhone)
     {
-    _tableView.frame = CGRectMake(328,0,_tableView.frame.size.width-5, _tableView.frame.size.height+50);
-    _youtubeTableView.hidden=YES;
-    CGRect high=CGRectMake(2, 230, _refresh.frame.size.width, _refresh.frame.size.height-2);
+    _tableView.frame = CGRectMake(320,0,150,273);
+    _youtubeTableView.frame=CGRectMake(160,134,150,160);
+        _upcomingView.frame=CGRectMake(160,134,150,160);
+        
+    CGRect high=CGRectMake(2, 230, _refresh.frame.size.width, _refresh.frame.size.height);
     [_refresh setFrame: high];
     _weatherImage.frame=CGRectMake(5, 15-5, _weatherImage.frame.size.width, _weatherImage.frame.size.height);
     _temperature.frame=CGRectMake(5, 48, _temperature.frame.size.width, _temperature.frame.size.height);
     _weatherCondition.frame=CGRectMake(5, 59, _weatherCondition.frame.size.width, _weatherCondition.frame.size.height);
     }
+    else
+    {   
+        _youtubeTableView.frame=CGRectMake(730, 100, 290,520);
+        _upcomingView.frame=CGRectMake(493,100, _upcomingView.frame.size.width,520);
+        _tableView.frame=CGRectMake(10, 270, 350, 400-5);
+        CGRect bell=CGRectMake(70, 218, 125, 50);
+        [_bellSchedule setFrame:bell];
+    }
 }
 -(void)portraitLayout
 {   if(UI_USER_INTERFACE_IDIOM() ==UIUserInterfaceIdiomPhone)
-{   int w=164;
-    _tableView.frame=CGRectMake(0,193,w,_tableView.frame.size.height);
+    { int w=164;
+    _upcomingView.hidden=YES;
+       CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+        if(screenSize.height>480)
+        {
+            _upcomingView.frame=CGRectMake(165,193,w,323);
+            _tableView.frame=CGRectMake(0,193,w,323);
+            _youtubeTableView.frame=CGRectMake(165,193,w,_tableView.frame.size.height);
+        }
+        else
+        {
+            _upcomingView.frame=CGRectMake(165,193,w,239);
+            _tableView.frame=CGRectMake(0,193,w,239);
+            _youtubeTableView.frame=CGRectMake(165,193,w,_tableView.frame.size.height);
+        }
+    
     _refresh.frame=CGRectMake(263,3,_refresh.frame.size.width,_refresh.frame.size.height);
     _youtubeTableView.hidden=NO;
     _weatherCondition.frame=CGRectMake(8,48, _weatherCondition.frame.size.width, _weatherCondition.frame.size.height);
     _temperature.frame=CGRectMake(8,63, _temperature.frame.size.width,_temperature.frame.size.height);
-        _weatherImage.frame=CGRectMake(8,18,_weatherImage.frame.size.width,_weatherImage.frame.size.height);
-        
-}
+    _weatherImage.frame=CGRectMake(8,14,_weatherImage.frame.size.width,_weatherImage.frame.size.height);}
+    else
+    {
+        _tableView.frame=CGRectMake(0,417,385,491);
+         _youtubeTableView.frame=CGRectMake(385, 417, 385,491);
+        _upcomingView.frame=CGRectMake(527,94,233,304);
+        CGRect bell=CGRectMake(74, 284, 130, 61);
+        [_bellSchedule setFrame:bell];
+    }
     
 }
 
@@ -187,7 +218,7 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         if (cell == nil) {
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
         }
-        
+
         // Configure the cell...
         CalanderData *eventLcl = (CalanderData *)[_EventArray objectAtIndex:[indexPath row]];
         cell.textLabel.numberOfLines = 2;
@@ -197,6 +228,10 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         NSString *str1=[eventLcl.Description stringByReplacingOccurrencesOfString:@"<br />" withString:@""];
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@" , str1];
         NSLog(@"NSString*str=\n%@",str1);
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+//            [self dayInformation];
+        });
         return cell;
           }
 }
@@ -274,6 +309,7 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         [_EventArray addObject:googCalObj];
         
         
+        
     }
 }
 
@@ -297,18 +333,49 @@ finishedWithFeed:(GDataFeedBase *)aFeed
     [[self upcomingView]reloadData];
     
 }
+//Date information save this for another version. 
+//-(void)dayInformation
+//{
+//    
+//    int f=0; 
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    [formatter setDateStyle:NSDateFormatterMediumStyle];
+//    NSDate*today=[NSDate date];
+//    NSString*dateString=[formatter stringFromDate:today];
+//    NSString*descriptString=@"Hi";
+//   while (_color)
+//   {
+//    while([descriptString isEqualToString:@"Hi"] || [descriptString rangeOfString:dateString].location != NSNotFound)
+//        {
+//      CalanderData*day=[_EventArray objectAtIndex:f];
+//        NSString*revised=[day.Description stringByReplacingOccurrencesOfString:@"When:" withString:@""];
+//        NSString*revised2=[revised stringByReplacingOccurrencesOfString:@"<br />\n\n\n<br />Event Status: confirmed" withString:@""];
+//        descriptString=revised2;
+//        if ([day.Title isEqualToString:@"White Day"])
+//        {
+//            _color=day.Title;
+//        }
+//        else if ([day.Title isEqualToString:@"Maroon Day"])
+//        {
+//            _color=day.Title; 
+//        }
+//        f=f+1;
+//        }
+//   }
+//    int daysCount=1; 
+//    NSURL*calanderUrl=[dayInformation getDayInformation:daysCount];
+//    dispatch_sync(kBgQueue, ^{
+//        NSData* data = [NSData dataWithContentsOfURL: calanderUrl];
+//        [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
+//        NSLog(@"Last Game");});
+//        daysCount++; 
+//    
+//}
+
 //End Void functions Calander
 #pragma mark Weather
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    [_weatherInfo setLength:0];
-}
 
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    [_weatherInfo appendData:data];
-}
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+- (void)calanderDataReady
 {
     NSError *myError = nil;
     NSDictionary *res = [NSJSONSerialization JSONObjectWithData:_weatherInfo options:NSJSONReadingMutableLeaves  error:&myError];
@@ -330,6 +397,24 @@ finishedWithFeed:(GDataFeedBase *)aFeed
     [[self upcomingView]reloadData];
 
 }
+- (IBAction)bellschedulePress:(UIButton *)sender {
+    ViewController8*information=[self.storyboard instantiateViewControllerWithIdentifier:@"newView"];
+    information.colorString=_color;
+    [self.navigationController pushViewController:information animated:YES];
+   
+}
+- (IBAction)viewDifferent:(UIButton *)sender {
+    if(_upcomingView.hidden==YES)
+    {
+        _youtubeTableView.hidden=YES;
+        _upcomingView.hidden=NO;
+    }
+    else
+    {
+        _upcomingView.hidden=YES;
+        _youtubeTableView.hidden=NO;
+    }
+}
 
 - (void)dealloc {
 	[_toolbar release];
@@ -341,6 +426,9 @@ finishedWithFeed:(GDataFeedBase *)aFeed
     [_weatherCondition release];
     [_weatherImage release];
     [_temperature release];
+    [_schedule release];
+    [_bellSchedule release];
+    [_switchView release];
     [super dealloc];
 }
 - (GDataServiceGoogleYouTube *)youTubeService {

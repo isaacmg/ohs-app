@@ -17,10 +17,12 @@
 #import "CalanderData.h"
 #import <Foundation/NSJSONSerialization.h>
 #import <EventKit/EventKit.h>
+#import "ViewController8.h"
+#import "dayInformation.h" 
 
 @class BlogRssParser;
 @class BlogRss;
-
+@class dayInformation; 
 @interface ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,BlogRssParserDelegate> {
 	BlogRssParser * _rssParser;
 	UITableView * _tableView;
@@ -35,7 +37,9 @@
 @property (retain, nonatomic) IBOutlet UITableView *youtubeTableView;
 @property (retain, nonatomic) IBOutlet UITableView *upcomingView;
 @property (retain, nonatomic) IBOutlet UIButton *refresh;
+@property (retain, nonatomic) IBOutlet UIButton *schedule;
 @property (assign) NSString*url;
+@property (assign)NSString*color;
 @property (nonatomic, retain) GDataFeedYouTubeVideo *feed;
 @property (nonatomic,retain)NSMutableArray*EventArray;
 @property (nonatomic,assign)NSInteger selectedRow;
@@ -43,6 +47,8 @@
 @property (retain, nonatomic) IBOutlet UIImageView *weatherImage;
 @property(nonatomic,retain) NSMutableData*weatherInfo;
 @property (retain, nonatomic) IBOutlet UILabel *temperature;
+@property (retain, nonatomic) IBOutlet UIButton *bellSchedule;
+@property (retain, nonatomic) IBOutlet UIButton *switchView;
 -(void)LoadCalendarData;
 -(void)AddEventToCalendar;
 @end

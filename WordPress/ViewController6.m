@@ -27,6 +27,22 @@
     [_webView2 loadRequest:httpRequest];
 
 }
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+
+{   [self loadProperView];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self loadProperView];
+}
+-(void)loadProperView
+{   CGFloat width = CGRectGetWidth(self.view.bounds);
+    CGFloat height = CGRectGetHeight(self.view.bounds);
+    _webView2.frame=CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,width, height);
+}
+
 
 - (void)didReceiveMemoryWarning
 {
