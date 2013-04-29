@@ -32,6 +32,8 @@
     NSDictionary*socialStudies=[NSDictionary dictionaryWithObject:socialTeachers forKey:@"Staff Directory"];
     NSArray*scienceTeachers=[NSArray arrayWithObjects:@"Lesile Boyd",@"Cynthania Clay",@"Jeff Owen",@"John Norris", nil];
     NSDictionary*scienceStudies=[NSDictionary dictionaryWithObject:scienceTeachers forKey:@"Staff Directory"];
+    NSArray*otherTeachers=[NSArray arrayWithObjects:@"Christie Boyd", nil];
+    NSDictionary*otherStudies=[NSDictionary dictionaryWithObject:otherTeachers forKey:@"Staff Directory"];
     //Add teacher data to the array 
     [_teacherData addObject:adminstrators];
     [_teacherData addObject:englishStudies];
@@ -42,6 +44,7 @@
     [_teacherData addObject:gym];
     [_teacherData addObject:scienceStudies];
     [_teacherData addObject:socialStudies];
+    [_teacherData addObject:otherStudies];
 }
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {   [self loadProperView];

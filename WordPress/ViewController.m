@@ -82,8 +82,8 @@
 {   if(UI_USER_INTERFACE_IDIOM() ==UIUserInterfaceIdiomPhone)
     {
     _tableView.frame = CGRectMake(320,0,150,273);
-    _youtubeTableView.frame=CGRectMake(160,134,150,160);
-        _upcomingView.frame=CGRectMake(160,134,150,160);
+    _youtubeTableView.frame=CGRectMake(160,134,150,130);
+        _upcomingView.frame=CGRectMake(160,134,150,130);
         
     CGRect high=CGRectMake(2, 230, _refresh.frame.size.width, _refresh.frame.size.height);
     [_refresh setFrame: high];
@@ -113,8 +113,8 @@
         }
         else
         {
-            _upcomingView.frame=CGRectMake(165,193,w,239);
-            _tableView.frame=CGRectMake(0,193,w,239);
+            _upcomingView.frame=CGRectMake(165,193,w,230);
+            _tableView.frame=CGRectMake(0,193,w,230);
             _youtubeTableView.frame=CGRectMake(165,193,w,_tableView.frame.size.height);
         }
     
@@ -145,8 +145,12 @@ finishedWithFeed:(GDataFeedBase *)aFeed
           error:(NSError *)error {
     
 	self.feed = (GDataFeedYouTubeVideo *)aFeed;
-    
+    if ([self internetCheck])
+    {
+    [self youtubeData];
+        
 	[self.youtubeTableView reloadData];
+    }
 
     
 }
@@ -157,6 +161,19 @@ finishedWithFeed:(GDataFeedBase *)aFeed
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Connectivity" message:@"Unable to download data. Please check if you are connected to internet."delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
 	[alert show];
 	[alert release];
+}
+-(void)youtubeData
+{
+    _youtubeThumbnails=[[NSMutableArray alloc]init];
+   
+    for (int y=0; y<12; y++){
+        GDataEntryBase *entry = [[feed entries] objectAtIndex:y];
+        NSArray *thumbnails = [[(GDataEntryYouTubeVideo *)entry mediaGroup] mediaThumbnails];
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[thumbnails objectAtIndex:0] URLString]]];
+        [_youtubeThumbnails addObject:data];
+    }
+
+    
 }
 //UITableView Info
 #pragma mark UITableView Data 
@@ -201,13 +218,12 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         // Configure the cell.
         GDataEntryBase *entry = [[feed entries] objectAtIndex:indexPath.row];
         NSString *title = [[entry title] stringValue];
-        NSArray *thumbnails = [[(GDataEntryYouTubeVideo *)entry mediaGroup] mediaThumbnails];
+        
         cell.textLabel.text = title;
         cell.textLabel.numberOfLines = 2;
         cell.textLabel.font = [UIFont boldSystemFontOfSize:12];
         
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[thumbnails objectAtIndex:0] URLString]]];
-        cell.imageView.image = [UIImage imageWithData:data];
+        cell.imageView.image = [UIImage imageWithData:[_youtubeThumbnails objectAtIndex:indexPath.row]];
         return cell;
     }
     else if (tableView==self.upcomingView)
@@ -378,6 +394,8 @@ finishedWithFeed:(GDataFeedBase *)aFeed
 - (void)calanderDataReady
 {
     NSError *myError = nil;
+    if([self internetCheck])
+    {
     NSDictionary *res = [NSJSONSerialization JSONObjectWithData:_weatherInfo options:NSJSONReadingMutableLeaves  error:&myError];
     NSArray *results =  [res objectForKey:@"current_observation"];
     NSString *cur = [results valueForKey:@"weather"];
@@ -390,6 +408,7 @@ finishedWithFeed:(GDataFeedBase *)aFeed
     _weatherImage.image=image;
     _weatherCondition.text=cur;
     _temperature.text=tmp;
+    }
 }
 
 - (IBAction)refresh:(UIButton *)sender {

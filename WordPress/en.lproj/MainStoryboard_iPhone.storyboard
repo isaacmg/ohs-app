@@ -110,8 +110,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0gi-oa-guU">
                                         <rect key="frame" x="210" y="5" width="98" height="46"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                        <state key="normal" title="Staff Directory" backgroundImage="Default.png">
+                                        <state key="normal" title="Staff Directory" backgroundImage="imagetag.jpg">
                                             <color key="titleColor" red="1" green="0.87404996710000005" blue="0.63855922600000004" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.53333336114883423" green="0.086274512112140656" blue="0.52549022436141968" alpha="1" colorSpace="deviceRGB"/>
                                         </state>
@@ -651,11 +652,72 @@
     </scenes>
     <resources>
         <image name="213.tiff" width="181" height="72"/>
-        <image name="Default.png" width="320" height="480"/>
         <image name="generic_user_image.jpg" width="200" height="200"/>
+        <image name="imagetag.jpg" width="956" height="500"/>
         <image name="logo-red-riots-jpeg1.jpg" width="434" height="205"/>
         <image name="schoolname.gif" width="253" height="88"/>
     </resources>
+    <classes>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        </class>
+        <class className="ViewController1" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController1.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ViewController2" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController2.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView1" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ViewController3" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController3.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ViewController5" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController5.h"/>
+            <relationships>
+                <relationship kind="outlet" name="staffDirectory" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ViewController6" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController6.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView2" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ViewController7" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController7.h"/>
+            <relationships>
+                <relationship kind="outlet" name="coursesTaught" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="teacherBio" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="teacherEmail" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="teacherImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="teacherPhone" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ViewController8" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController8.h"/>
+            <relationships>
+                <relationship kind="outlet" name="advisory" candidateClass="UIView"/>
+                <relationship kind="outlet" name="advisoryButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="advisoryView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="dayColor" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mini" candidateClass="UIView"/>
+                <relationship kind="outlet" name="miniDay" candidateClass="UIView"/>
+                <relationship kind="outlet" name="miniDayButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="regular" candidateClass="UIView"/>
+                <relationship kind="outlet" name="regularButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="regularView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="todayView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -49,6 +49,7 @@
 @property (retain, nonatomic) IBOutlet UILabel *temperature;
 @property (retain, nonatomic) IBOutlet UIButton *bellSchedule;
 @property (retain, nonatomic) IBOutlet UIButton *switchView;
+@property (retain, nonatomic)NSMutableArray*youtubeThumbnails;
 -(void)LoadCalendarData;
 -(void)AddEventToCalendar;
 @end

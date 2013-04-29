@@ -186,6 +186,23 @@
         NSArray*teacher=teacherInformation.dBakes;
         [self loadTeacherData:teacher];
     }
+    else if([_teacherName isEqualToString:@"Christie Boyd"])
+    {
+        [teacherInformation getInfoCBoyd];
+        NSArray*teacher=teacherInformation.christieBoyd;
+        [self loadTeacherData:teacher];
+
+    }
+    else
+    {
+    
+     _coursesTaught.text=@"None";
+    _teacherBio.text=@"Administrator or teacher has not provided any biographical data.";
+    _teacherPhone.text=@"Call the main office";
+    _teacherEmail.text=@"Check website";
+        
+        
+    }
 
 }
 -(void)loadTeacherData:(NSArray *)teacherFinal
