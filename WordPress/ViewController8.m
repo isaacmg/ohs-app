@@ -11,10 +11,13 @@
 @implementation ViewController8
 -(void)viewWillAppear:(BOOL)animated
 {
-    [self loadProperView];
+    
     [self setDayInfo];
 }
-
+-(void)viewWillLayoutSubviews
+{
+    [self loadProperView];
+}
 - (void)viewDidLoad
 {   self.advisory.hidden=YES;
     self.mini.hidden=YES;
@@ -94,6 +97,7 @@
     //NSDate*today=[NSDate date];
     //NSString*dateString= [formatter stringFromDate:today];
     //NSLog(@"NSString *string = \n%@", _colorString);
+    //NSMutableArray*chatoongaShit=
 }
 
 - (void)didReceiveMemoryWarning

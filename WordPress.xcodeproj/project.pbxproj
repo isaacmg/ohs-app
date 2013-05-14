@@ -38,6 +38,7 @@
 		6A41CDE216C28E910065D068 /* ViewController6.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A41CDE116C28E910065D068 /* ViewController6.m */; };
 		6A41CDE816C29A2A0065D068 /* 2.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 6A41CDE716C29A2A0065D068 /* 2.tiff */; };
 		6A41CDEA16C29AA30065D068 /* revised.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 6A41CDE916C29AA30065D068 /* revised.tiff */; };
+		6A77AF5F1739377C002D5B2A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A77AF5E1739377C002D5B2A /* logo.png */; };
 		6AAD9D8E16E0F95C007BB843 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD9D8D16E0F95C007BB843 /* icon.jpg */; };
 		6AAD9D9016E0FA8E007BB843 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AAD9D8F16E0FA8E007BB843 /* icon2.png */; };
 		6ACBDA1316E278E200CDFD06 /* ViewController7.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACBDA1216E278E100CDFD06 /* ViewController7.m */; };
@@ -50,6 +51,7 @@
 		6ADEFD6D16C33F8100077594 /* 213.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 6ADEFD6C16C33F8100077594 /* 213.tiff */; };
 		6ADEFEC916C74E0500077594 /* CalanderData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADEFEC816C74E0400077594 /* CalanderData.m */; };
 		6AE8EBFF16C3016E00A2C3F1 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AE8EBFE16C3016E00A2C3F1 /* MainStoryboard_iPad.storyboard */; };
+		6AEB8481173AC3D5008F981F /* logo-red-riots-jpeg1 copy2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AEB8480173AC3D5008F981F /* logo-red-riots-jpeg1 copy2.png */; };
 		6AF0026C171453600051503E /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF0026B171453600051503E /* icon@2x.png */; };
 		6AF002721714536D0051503E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF002711714536D0051503E /* icon.png */; };
 		6AF002741714537B0051503E /* ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF002731714537B0051503E /* ipad.png */; };
@@ -486,6 +488,7 @@
 		6A41CDE116C28E910065D068 /* ViewController6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController6.m; sourceTree = "<group>"; };
 		6A41CDE716C29A2A0065D068 /* 2.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 2.tiff; sourceTree = "<group>"; };
 		6A41CDE916C29AA30065D068 /* revised.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = revised.tiff; sourceTree = "<group>"; };
+		6A77AF5E1739377C002D5B2A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		6AAD9D8D16E0F95C007BB843 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
 		6AAD9D8F16E0FA8E007BB843 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
 		6ACBDA1116E278E100CDFD06 /* ViewController7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController7.h; sourceTree = "<group>"; };
@@ -502,6 +505,7 @@
 		6ADEFEC716C74E0400077594 /* CalanderData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalanderData.h; path = ../WordPress/CalanderData.h; sourceTree = "<group>"; };
 		6ADEFEC816C74E0400077594 /* CalanderData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalanderData.m; path = ../WordPress/CalanderData.m; sourceTree = "<group>"; };
 		6AE8EBFE16C3016E00A2C3F1 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		6AEB8480173AC3D5008F981F /* logo-red-riots-jpeg1 copy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-red-riots-jpeg1 copy2.png"; sourceTree = "<group>"; };
 		6AF0026B171453600051503E /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		6AF002711714536D0051503E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		6AF002731714537B0051503E /* ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipad.png; sourceTree = "<group>"; };
@@ -548,6 +552,7 @@
 		6A41CB3E16BF74ED0065D068 = {
 			isa = PBXGroup;
 			children = (
+				6A77AF5E1739377C002D5B2A /* logo.png */,
 				6AF002841714C2590051503E /* Default-Landscape@2x~ipad.png */,
 				6AF002821714C23C0051503E /* Default@2x.png */,
 				6AF002801714C2330051503E /* Default.png */,
@@ -601,6 +606,7 @@
 				6AE8EBFE16C3016E00A2C3F1 /* MainStoryboard_iPad.storyboard */,
 				6A41CB6B16BF74ED0065D068 /* ViewController.h */,
 				6A41CB6C16BF74EE0065D068 /* ViewController.m */,
+				6AEB8480173AC3D5008F981F /* logo-red-riots-jpeg1 copy2.png */,
 				6A41CB9D16BF76A50065D068 /* ViewController1.h */,
 				6A41CB9E16BF76A50065D068 /* ViewController1.m */,
 				6A41CC6916C1D6AA0065D068 /* ViewController2.h */,
@@ -1168,6 +1174,8 @@
 				6AF002861714CEA70051503E /* Default-568h@2x.png in Resources */,
 				6AF002871714CF040051503E /* Default.png in Resources */,
 				6AF002891714D82C0051503E /* imagetag.jpg in Resources */,
+				6A77AF5F1739377C002D5B2A /* logo.png in Resources */,
+				6AEB8481173AC3D5008F981F /* logo-red-riots-jpeg1 copy2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,8 @@
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    _webView2.scalesPageToFit=YES;
+    
     
 	NSString *httpSource =@"http://riversidersu.org/index.php?option=com_content&view=article&id=121&Itemid=18";
     

@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
     self.view.backgroundColor = [UIColor  colorWithPatternImage:[UIImage imageNamed:@"back.png"]];
+    [_refresh setBackgroundColor:[UIColor brownColor]];
     //RSS Feed 
 	_rssParser = [[BlogRssParser alloc]init];
 	self.rssParser.delegate = self;
@@ -38,6 +39,21 @@
         NSLog(@"failed");
     }
 }
+-(void)viewWillLayoutSubviews
+{    UIDeviceOrientation interface = [UIApplication sharedApplication].statusBarOrientation;
+    if(((interface == UIInterfaceOrientationLandscapeLeft) ||
+        (interface == UIInterfaceOrientationLandscapeRight))){
+        [self landscapeLayout];
+    }else if(((interface == UIInterfaceOrientationPortrait) ||
+              (interface == UIInterfaceOrientationPortraitUpsideDown))){
+        [self portraitLayout];
+    }
+
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+}
 
 -(BOOL)internetCheck                   
 {
@@ -51,17 +67,13 @@
 }
 - (void)viewWillAppear:(BOOL)animated
 {
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
     [super viewWillAppear:animated];
-    UIDeviceOrientation interface = [UIApplication sharedApplication].statusBarOrientation;
+   
     
-    if(((interface == UIInterfaceOrientationLandscapeLeft) ||
-        (interface == UIInterfaceOrientationLandscapeRight))){
-        [self landscapeLayout];
-    }else if(((interface == UIInterfaceOrientationPortrait) ||
-              (interface == UIInterfaceOrientationPortraitUpsideDown))){
-        [self portraitLayout];
-    }
-    self.upcomingView.rowHeight = 80;
+        self.upcomingView.rowHeight = 80;
+   
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -81,22 +93,35 @@
 -(void)landscapeLayout
 {   if(UI_USER_INTERFACE_IDIOM() ==UIUserInterfaceIdiomPhone)
     {
-    _tableView.frame = CGRectMake(320,0,150,273);
-    _youtubeTableView.frame=CGRectMake(160,134,150,130);
-        _upcomingView.frame=CGRectMake(160,134,150,130);
-        
+        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+        if (screenSize.height>420)
+        {
+            _tableView.frame = CGRectMake(440,0,128,300);
+            _youtubeTableView.frame=CGRectMake(311,0,128,300);
+            _upcomingView.frame=CGRectMake(311,0,128,300);
+        }
+        else {
+    _tableView.frame = CGRectMake(320,0,150,300);
+    _youtubeTableView.frame=CGRectMake(160,134,150,165);
+        _upcomingView.frame=CGRectMake(160,134,150,165);
+        }
     CGRect high=CGRectMake(2, 230, _refresh.frame.size.width, _refresh.frame.size.height);
     [_refresh setFrame: high];
     _weatherImage.frame=CGRectMake(5, 15-5, _weatherImage.frame.size.width, _weatherImage.frame.size.height);
     _temperature.frame=CGRectMake(5, 48, _temperature.frame.size.width, _temperature.frame.size.height);
     _weatherCondition.frame=CGRectMake(5, 59, _weatherCondition.frame.size.width, _weatherCondition.frame.size.height);
+        //CGRect switchbutton=CGRectMake(100, 159, 61, 33);
+        CGRect switchbutton2=CGRectMake(100,230,61,33);
+        [_switchView setFrame:switchbutton2];
+        
+        
     }
     else
     {   
         _youtubeTableView.frame=CGRectMake(730, 100, 290,520);
         _upcomingView.frame=CGRectMake(493,100, _upcomingView.frame.size.width,520);
-        _tableView.frame=CGRectMake(10, 270, 350, 400-5);
-        CGRect bell=CGRectMake(70, 218, 125, 50);
+        _tableView.frame=CGRectMake(10, 299, 350, 400-5);
+        CGRect bell=CGRectMake(70, 230, 125, 50);
         [_bellSchedule setFrame:bell];
     }
 }
@@ -107,15 +132,19 @@
        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
         if(screenSize.height>480)
         {
-            _upcomingView.frame=CGRectMake(165,193,w,323);
-            _tableView.frame=CGRectMake(0,193,w,323);
+            _upcomingView.frame=CGRectMake(165,193,w,360);
+            _tableView.frame=CGRectMake(0,193,w,360);
             _youtubeTableView.frame=CGRectMake(165,193,w,_tableView.frame.size.height);
+            CGRect switchbutton=CGRectMake(259, 159, 61, 33);
+            [_switchView setFrame:switchbutton];
         }
         else
         {
-            _upcomingView.frame=CGRectMake(165,193,w,230);
-            _tableView.frame=CGRectMake(0,193,w,230);
+            _upcomingView.frame=CGRectMake(165,193,w,270);
+            _tableView.frame=CGRectMake(0,193,w,270);
             _youtubeTableView.frame=CGRectMake(165,193,w,_tableView.frame.size.height);
+            CGRect switchbutton=CGRectMake(259, 159, 61, 33);
+            [_switchView setFrame:switchbutton];
         }
     
     _refresh.frame=CGRectMake(263,3,_refresh.frame.size.width,_refresh.frame.size.height);
@@ -125,10 +154,10 @@
     _weatherImage.frame=CGRectMake(8,14,_weatherImage.frame.size.width,_weatherImage.frame.size.height);}
     else
     {
-        _tableView.frame=CGRectMake(0,417,385,491);
-         _youtubeTableView.frame=CGRectMake(385, 417, 385,491);
+        _tableView.frame=CGRectMake(0,417,385,509);
+         _youtubeTableView.frame=CGRectMake(385, 417, 385,509);
         _upcomingView.frame=CGRectMake(527,94,233,304);
-        CGRect bell=CGRectMake(74, 284, 130, 61);
+        CGRect bell=CGRectMake(74, 300, 130, 61);
         [_bellSchedule setFrame:bell];
     }
     
@@ -277,7 +306,9 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         
     }
     else if (tableView==self.upcomingView)
-    {
+    {   NSString*calanderUrl=@"http://riversidersu.org/index.php?option=com_wrapper&view=wrapper&Itemid=222";
+       
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:calanderUrl]];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     }

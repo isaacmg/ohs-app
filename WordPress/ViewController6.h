@@ -10,5 +10,6 @@
 
 @interface ViewController6 : UIViewController
 @property (retain, nonatomic) IBOutlet UIWebView *webView2;
+@property(nonatomic) BOOL scalesPageToFit;
 
 @end

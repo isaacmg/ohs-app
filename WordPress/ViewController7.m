@@ -16,13 +16,15 @@
 	[self formatString];
 }
 -(void)viewWillAppear:(BOOL)animated
+{   [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait];
+    [self loadProperView];
+}
+
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     [self loadProperView];
 }
--(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{   [self loadProperView];
-    
-}
+
 #pragma mark Getting Teacher Data
 -(void)formatString
 {   Teacher_Info*teacherInformation = [[Teacher_Info alloc] init];
@@ -211,24 +213,36 @@
     self.coursesTaught.text=[teacherFinal objectAtIndex:1];
     self.teacherPhone.text=[teacherFinal objectAtIndex:2];
     self.teacherEmail.text=[teacherFinal objectAtIndex:3];
+    NSString*path=[teacherFinal objectAtIndex:4];
+    NSURL *url = [NSURL URLWithString:path];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *img = [[UIImage alloc] initWithData:data];
+    self.teacherImage.image=img;
+    self.teacherNamed.text=_teacherName;
 }
 
 -(void)loadProperView
 {
-   if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-   {
-    UIDeviceOrientation interface = [[UIDevice currentDevice] orientation];
-    if(((interface == UIInterfaceOrientationLandscapeLeft) ||
-        (interface == UIInterfaceOrientationLandscapeRight))){
-        CGRect rectText=CGRectMake(200, 30, self.teacherBio.frame.size.width-20, self.teacherBio.frame.size.height);
-        _teacherBio.frame=rectText;
-    }else if(((interface == UIInterfaceOrientationPortrait) ||
-              (interface == UIInterfaceOrientationPortraitUpsideDown))){
-        CGRect rectText=CGRectMake(0, 220, 320, 208);
-        _teacherBio.frame=rectText;
-    }
-    }
+    self.coursesTaught.lineBreakMode = NSLineBreakByWordWrapping;
+    self.coursesTaught.numberOfLines = 2;
+    [self portraitView]; 
     
+}
+-(void)portraitView
+{
+    CGSize screenView = [[UIScreen mainScreen]bounds].size;
+    if (screenView.height>420)
+    {
+        _teacherImage.frame=CGRectMake(8, 8, 132, 121);
+        _teacherPhone.frame=CGRectMake(161, 150, 139, 21);
+        _teacherEmail.frame=CGRectMake(56, 171, 188, 21);
+        _coursesTaught.frame=CGRectMake(8, 210, 312, 37);
+        _teacherBio.frame=CGRectMake(0, 272, 320, 239);
+    }
+    else
+    {
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -243,6 +257,7 @@
     [_teacherImage release];
     [_teacherPhone release];
     [_coursesTaught release];
+    [_teacherName release];
     [super dealloc];
 }
 @end

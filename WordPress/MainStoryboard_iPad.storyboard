@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rzM-Py-I43" userLabel="100">
-                                <rect key="frame" x="0.0" y="417" width="402" height="491"/>
+                                <rect key="frame" x="0.0" y="417" width="402" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="2" id="bin-2V-PGZ"/>
@@ -21,7 +21,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="a3p-IS-nEg">
-                                <rect key="frame" x="400" y="417" width="368" height="491"/>
+                                <rect key="frame" x="400" y="417" width="368" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="2" id="C4h-Ib-lMh"/>
@@ -37,7 +37,7 @@ Orono, ME</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo-red-riots-jpeg1.jpg" id="JvI-Gp-MAf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo-red-riots-jpeg1 copy2.png" id="JvI-Gp-MAf">
                                 <rect key="frame" x="232" y="7" width="253" height="147"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ry2-NN-Z7D">
@@ -144,7 +144,7 @@ Orono, ME</string>
                                 <rect key="frame" x="12" y="7" width="72" height="62"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SM4-xn-aer">
-                                <rect key="frame" x="74" y="284" width="130" height="61"/>
+                                <rect key="frame" x="74" y="299" width="130" height="61"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Bell Schedule">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -600,7 +600,7 @@ Orono, ME</string>
         <image name="213.tiff" width="181" height="72"/>
         <image name="generic_user_image.jpg" width="200" height="200"/>
         <image name="imagetag.jpg" width="956" height="500"/>
-        <image name="logo-red-riots-jpeg1.jpg" width="434" height="205"/>
+        <image name="logo-red-riots-jpeg1 copy2.png" width="434" height="205"/>
         <image name="schoolname.gif" width="253" height="88"/>
     </resources>
     <classes>

@@ -32,7 +32,7 @@
     NSDictionary*socialStudies=[NSDictionary dictionaryWithObject:socialTeachers forKey:@"Staff Directory"];
     NSArray*scienceTeachers=[NSArray arrayWithObjects:@"Lesile Boyd",@"Cynthania Clay",@"Jeff Owen",@"John Norris", nil];
     NSDictionary*scienceStudies=[NSDictionary dictionaryWithObject:scienceTeachers forKey:@"Staff Directory"];
-    NSArray*otherTeachers=[NSArray arrayWithObjects:@"Christie Boyd", nil];
+    NSArray*otherTeachers=[NSArray arrayWithObjects:@"Christie Boyd", @"Mackenzie Grobmyer",@"Zachery Schiller", @"Jane Vanarsdale", nil];
     NSDictionary*otherStudies=[NSDictionary dictionaryWithObject:otherTeachers forKey:@"Staff Directory"];
     //Add teacher data to the array 
     [_teacherData addObject:adminstrators];

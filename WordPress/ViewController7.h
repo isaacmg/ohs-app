@@ -15,4 +15,5 @@
 @property (retain, nonatomic) IBOutlet UIImageView *teacherImage;
 @property (retain, nonatomic) IBOutlet UILabel *teacherPhone;
 @property (retain, nonatomic) IBOutlet UILabel *coursesTaught;
+@property (retain, nonatomic) IBOutlet UILabel *teacherNamed;
 @end
