@@ -62,6 +62,13 @@
     NSString*checkError=[NSString stringWithContentsOfURL:googleURL encoding:NSUTF8StringEncoding error:&error];
     return ( checkError != NULL ) ? YES : NO;
 }
+-(BOOL)internetCheck2
+{
+    NSError*error=nil;
+    NSURL*googleURL= [NSURL URLWithString:@"http://google.com"];
+    NSString*checkError=[NSString stringWithContentsOfURL:googleURL encoding:NSUTF8StringEncoding error:&error];
+    return ( checkError != NULL ) ? YES : NO;
+}
 -(void)reloadRss{
 	[[self rssParser]startProcess];
 }
@@ -94,7 +101,7 @@
 {   if(UI_USER_INTERFACE_IDIOM() ==UIUserInterfaceIdiomPhone)
     {
         CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-        if (screenSize.height>420)
+        if (screenSize.height>480)
         {
             _tableView.frame = CGRectMake(440,0,128,300);
             _youtubeTableView.frame=CGRectMake(311,0,128,300);
@@ -336,6 +343,7 @@ finishedWithFeed:(GDataFeedBase *)aFeed
     
     //parse out the json data
     NSError* error;
+    if([self internetCheck2]){
     NSDictionary* json = [NSJSONSerialization
                           JSONObjectWithData:responseData //1
                           
@@ -354,7 +362,7 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         googCalObj.Description = [content objectForKey:@"$t"];
         
         [_EventArray addObject:googCalObj];
-        
+    }
         
         
     }

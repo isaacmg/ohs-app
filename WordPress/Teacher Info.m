@@ -8,7 +8,7 @@
 
 #import "Teacher Info.h"
 @implementation Teacher_Info
-
+//Simplify code eventually...
 #pragma mark English 
 -(void)getInfoBulteel
 {   _jimBulteel=[[NSMutableArray alloc]init];
@@ -133,7 +133,7 @@ _waldoCabellero=[[NSMutableArray alloc]init];
 -(void)getInfoCrocker
 {
     _chrisCrocker=[[NSMutableArray alloc]init];
-    NSString*shortBio=@"has been teachingat Orono High School since 97. She is a graduate of the University ofMaine with a degree in Modern Languages, Spanish and German. Shespent a semester studying at the UniversitätSalzburg asan undergraduate, and she studied at the Universidad Complutense in Madrid, Spain, as a graduate student. She travels frequentlythroughout Spain and Morocco. ";
+    NSString*shortBio=@"has been teaching at Orono High School since 97. She is a graduate of the University of Maine with a degree in Modern Languages, Spanish and German. She spent a semester studying at the Universität Salzburg as an undergraduate, and she studied at the Universidad Complutense in Madrid, Spain, as a graduate student. She travels frequently throughout Spain and Morocco. ";
     NSString*coursesTaught=@"Spanish I , Spanish II , Spanish III , Spanish IV , Spanish V-VI";
     NSString*phoneNumber=@"207-866-4916-320";
     NSString*emailAddress=@"ccrocker@rsu26.org";
@@ -393,6 +393,29 @@ _waldoCabellero=[[NSMutableArray alloc]init];
     [_christieBoyd addObject:phoneNumber];
     [_christieBoyd addObject:emailAddress];
     [_christieBoyd addObject:imageUrl];
+}
+-(void)getInfoGrobymyer
+{
+    _mGrobmyer=[[NSMutableArray alloc]init];
+    NSString*shortBio=@"My name is Mackenzie Grobmyer and I'm the International Student Coordinator and ESL teacher at Orono High School. Before working at Orono High School, I taught in Shenzhen, China. I really enjoy working with people from different cultures--we have a lot to learn from one another. When I'm not in school, I'm likely enjoying the great outdoors or traveling, or figuring out a way to combine the two! I'm originally from Virginia, but came to Maine 8 years ago and have fallen in love with the recreation opportunities we have here.";
+    NSString*coursesTaught=@"For the 2013-14 school year, I will teach three courses at Orono High School: ESL I, ESL II, and Global Education. The remainder of my day is spent coordinating the international program--recruiting students, creating opportunities for our local and international students to interact, helping the international students with the day-to-day nuances of adjusting to a new education and social system, working with host families, building connections with UMaine, and more! For the 13-14 school year, we will have students from China, Denmark, and France.";
+    NSString*phoneNumber=@"Extension ";
+    NSString*emailAddress=@"mgrobmyer@rsu26.org";
+    NSString*imageUrl=@"http://isaac26.com/faculty_photos/mGrobmyer.jpg";
+    [_mGrobmyer addObject:shortBio];
+    [_mGrobmyer addObject:coursesTaught];
+    [_mGrobmyer addObject:phoneNumber];
+    [_mGrobmyer addObject:emailAddress];
+    [_mGrobmyer addObject:imageUrl];
+    
+}
+-(void)getInfoSchiller
+{
+    
+}
+-(void)getInfoVanarsdale
+{
+    
 }
 
 @end

@@ -15,6 +15,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	NSString *httpSource =passedString; 
      NSLog(@"NSString *string = \n%@", passedString);
     NSURL *fullUrl = [NSURL URLWithString:httpSource];

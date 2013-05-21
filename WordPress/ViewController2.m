@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _webView1.scalesPageToFit=NO;
 	NSString *httpSource =@"http://65.18.85.97:8080/Stu-Grd/index.jsp";
  
     NSURL *fullUrl = [NSURL URLWithString:httpSource];

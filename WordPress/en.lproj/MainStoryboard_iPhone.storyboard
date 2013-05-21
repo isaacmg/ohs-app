@@ -567,7 +567,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gg3-Ud-hxw">
-                                <rect key="frame" x="148" y="8" width="167" height="31"/>
+                                <rect key="frame" x="148" y="8" width="167" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -578,7 +578,11 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <outlet property="coursesTaught" destination="aOD-SG-6qc" id="gPr-0a-RuX"/>
+                        <outlet property="bioStatic" destination="UVf-Im-ga1" id="hiZ-wh-ho6"/>
+                        <outlet property="coursesTaught" destination="aOD-SG-6qc" id="9hT-oD-jeC"/>
+                        <outlet property="coursesTaughtStatic" destination="c56-QB-j6A" id="ckC-mF-bNv"/>
+                        <outlet property="emailStatic" destination="2Na-li-hTM" id="gKO-9X-MVu"/>
+                        <outlet property="phoneNumberStatic" destination="Ird-WF-ZH8" id="Gst-vR-mb5"/>
                         <outlet property="teacherBio" destination="Mrb-Ne-q8V" id="1Rv-gp-9C3"/>
                         <outlet property="teacherEmail" destination="hP7-lY-0ku" id="qKZ-pZ-pga"/>
                         <outlet property="teacherImage" destination="dR6-Ui-WG0" id="vY2-qU-xHU"/>
@@ -675,9 +679,6 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="bellschedulePress:" candidateClass="UIButton"/>
-                <relationship kind="action" name="refresh:" candidateClass="UIButton"/>
-                <relationship kind="action" name="viewDifferent:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bellSchedule" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="refresh" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="rssParser" candidateClass="BlogRssParser"/>
@@ -724,7 +725,11 @@
         <class className="ViewController7" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController7.h"/>
             <relationships>
+                <relationship kind="outlet" name="bioStatic" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="coursesTaught" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="coursesTaughtStatic" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="emailStatic" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="phoneNumberStatic" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="teacherBio" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="teacherEmail" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="teacherImage" candidateClass="UIImageView"/>

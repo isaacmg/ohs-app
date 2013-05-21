@@ -39,7 +39,10 @@
 @property (nonatomic, retain)NSMutableArray*lesileBoyd;
 @property (nonatomic, retain)NSMutableArray*dBakes;
 @property (nonatomic,retain)NSMutableArray*shanaGodall;
-@property (nonatomic, retain)NSMutableArray*christieBoyd; 
+@property (nonatomic, retain)NSMutableArray*christieBoyd;
+@property (nonatomic, retain)NSMutableArray*mGrobmyer;
+@property (nonatomic, retain)NSMutableArray*zackSchiller;
+@property (nonatomic, retain)NSMutableArray*janeVanarsdale; 
 -(void)getInfoBulteel;
 -(void)getInfoJoseph;
 -(void)getinfoMoriarty;
@@ -68,4 +71,7 @@
 -(void)getInfoBaker; 
 -(void)getInfoGoodall;
 -(void)getInfoCBoyd;
+-(void)getInfoGrobymyer;
+-(void)getInfoSchiller;
+-(void)getInfoVanarsdale; 
 @end

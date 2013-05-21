@@ -11,9 +11,17 @@
 @implementation ViewController5
 - (void)viewDidLoad
 {   
-    _teacherData=[[NSMutableArray alloc]init];
-   self.navigationItem.title=@"Staff Directory";
-    //Teacher Data...a bit reptitive probably could find a more concise way but least technical. 
+
+}
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{   [self loadProperView];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{   _teacherData=[[NSMutableArray alloc]init];
+    self.navigationItem.title=@"Staff Directory";
+    //Teacher Data...a bit reptitive probably could find a more concise way but least technical.
     NSArray*administrative=[NSArray arrayWithObjects:@"Jim Chasse",@"Bob Sinclair",nil];
     NSDictionary*adminstrators=[NSDictionary dictionaryWithObject:administrative forKey:@"Staff Directory"];
     NSArray*englishTeachers=[NSArray arrayWithObjects:@"Jim Bulteel",@"Don Joseph",@"Chris Luthin", @"Claire Moriarty",nil];
@@ -34,7 +42,7 @@
     NSDictionary*scienceStudies=[NSDictionary dictionaryWithObject:scienceTeachers forKey:@"Staff Directory"];
     NSArray*otherTeachers=[NSArray arrayWithObjects:@"Christie Boyd", @"Mackenzie Grobmyer",@"Zachery Schiller", @"Jane Vanarsdale", nil];
     NSDictionary*otherStudies=[NSDictionary dictionaryWithObject:otherTeachers forKey:@"Staff Directory"];
-    //Add teacher data to the array 
+    //Add teacher data to the array
     [_teacherData addObject:adminstrators];
     [_teacherData addObject:englishStudies];
     [_teacherData addObject:fineArtStudies];
@@ -45,14 +53,6 @@
     [_teacherData addObject:scienceStudies];
     [_teacherData addObject:socialStudies];
     [_teacherData addObject:otherStudies];
-}
--(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{   [self loadProperView];
-    
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
     [self loadProperView];
 }
 -(void)loadProperView
