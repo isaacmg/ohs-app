@@ -251,6 +251,12 @@
         NSArray*teacher=teacherInformation.janeVanarsdale;
         [self loadTeacherData:teacher]; 
     }
+    else if ([_teacherName isEqualToString:@"Jim Chasse"])
+    {
+        [teacherInformation getInfoChasse];
+        NSArray*teacher=teacherInformation.jimChasse;
+        [self loadTeacherData:teacher];
+    }
     else
     {
     
@@ -300,7 +306,7 @@
     CGSize screenView = [[UIScreen mainScreen]bounds].size;
     if (screenView.height>481)
     {
-        _teacherImage.frame=CGRectMake(8, 8, 132, 121);
+        _teacherImage.frame=CGRectMake(8, 8, 86, 115);
         _teacherPhone.frame=CGRectMake(161, 133, 139, 21);
         _teacherEmail.frame=CGRectMake(56, 150, 188, 21);
         _coursesTaught.frame=CGRectMake(8, 181, 312, 70);

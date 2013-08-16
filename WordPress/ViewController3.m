@@ -8,16 +8,16 @@
 
 #import "ViewController3.h"
 @implementation ViewController3
-@synthesize passedString2;
-@synthesize webView=_webView;
+
+
 -(void)viewDidDisappear:(BOOL)animated
 {
-    [_webView stopLoading];
+    
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     
-     self.webView.backgroundColor = [UIColor  colorWithPatternImage:[UIImage imageNamed:@"back.png"]];
+     
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
     {
         CGRect frame = CGRectMake(90,200, 620,400);
@@ -29,8 +29,8 @@
 
     }
     else
-    {
-        CGRect frame = CGRectMake(5,55, 249,200);
+    {   
+        CGRect frame = CGRectMake(2, 30, 316, 240);
         NSString *embedHTML =[self stringwork];
         UIWebView *videoView = [[UIWebView alloc] initWithFrame:frame];
         videoView.backgroundColor = [UIColor clearColor];
@@ -43,10 +43,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
+-(void)viewWillLayoutSubviews
+{
+    
+}
+
 -(NSString *)stringwork                                 //Returns Youtube HTML Embed String 
 {
-    NSLog(@"NSURL*url = \n%@", passedString2);
-    NSURL *fullUrl =passedString2;
+    NSLog(@"NSURL*url = \n%@", _passedString2);
+    NSURL *fullUrl =_passedString2;
     NSString *myString = [fullUrl absoluteString];
     NSLog(@"NSString*strt2 = \n%@", myString);
     NSString *str1=[myString stringByReplacingOccurrencesOfString:@"?version=3&f=user_uploads&app=youtube_gdata" withString:@""];
@@ -79,6 +84,7 @@
     else return combinedFinal;
 
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -86,7 +92,6 @@
 }
 
 - (void)dealloc {
-    [_webView release];
     [super dealloc];
 }
 @end

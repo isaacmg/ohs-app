@@ -10,12 +10,12 @@
 
 @implementation ViewController
 @synthesize wordpresstableView =_tableView;
-@synthesize url;
-@synthesize feed;
+
 @synthesize selectedRow; 
 #pragma mark View Life Cycle  
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    [_switchView setTitle:@"Events" forState:UIControlStateNormal];
     self.view.backgroundColor = [UIColor  colorWithPatternImage:[UIImage imageNamed:@"back.png"]];
     [_refresh setBackgroundColor:[UIColor brownColor]];
     //RSS Feed 
@@ -28,7 +28,7 @@
 	NSURL *feedURL = [GDataServiceGoogleYouTube youTubeURLForUserID:@"oronoriot" userFeedID:uploadsID];
     [self internetCheck];
 	[self LoadCalendarData];
-	[service fetchFeedWithURL:feedURL delegate:self didFinishSelector:@selector(request:finishedWithFeed:error:)];
+    [service fetchFeedWithURL:feedURL delegate:self didFinishSelector:@selector(request:finishedWithFeed:error:)];
     if([self internetCheck]){
         _weatherInfo = [[NSMutableData alloc] init];
         NSURL*calanderUrl=[NSURL  URLWithString:@"http://api.wunderground.com/api/eae1e849db26ed92/conditions/q/ME/Orono.json"];
@@ -106,11 +106,16 @@
             _tableView.frame = CGRectMake(440,0,128,300);
             _youtubeTableView.frame=CGRectMake(311,0,128,300);
             _upcomingView.frame=CGRectMake(311,0,128,300);
+            CGRect switchbutton=CGRectMake(300-50,230,61,33);
+            [_switchView setFrame:switchbutton];
+
         }
         else {
     _tableView.frame = CGRectMake(320,0,150,300);
     _youtubeTableView.frame=CGRectMake(160,134,150,165);
         _upcomingView.frame=CGRectMake(160,134,150,165);
+            CGRect switchbutton2=CGRectMake(100-2,230,61,33);
+            [_switchView setFrame:switchbutton2];
         }
     CGRect high=CGRectMake(2, 230, _refresh.frame.size.width, _refresh.frame.size.height);
     [_refresh setFrame: high];
@@ -118,8 +123,7 @@
     _temperature.frame=CGRectMake(5, 48, _temperature.frame.size.width, _temperature.frame.size.height);
     _weatherCondition.frame=CGRectMake(5, 59, _weatherCondition.frame.size.width, _weatherCondition.frame.size.height);
         //CGRect switchbutton=CGRectMake(100, 159, 61, 33);
-        CGRect switchbutton2=CGRectMake(100,230,61,33);
-        [_switchView setFrame:switchbutton2];
+        
         
         
     }
@@ -135,9 +139,9 @@
 -(void)portraitLayout
 {   if(UI_USER_INTERFACE_IDIOM() ==UIUserInterfaceIdiomPhone)
     { int w=164;
-    _upcomingView.hidden=YES;
+    _upcomingView.hidden=YES; 
        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-        if(screenSize.height>480)
+        if(screenSize.height>480) //iPhone 5 or newer 
         {
             _upcomingView.frame=CGRectMake(165,193,w,360);
             _tableView.frame=CGRectMake(0,193,w,360);
@@ -145,7 +149,7 @@
             CGRect switchbutton=CGRectMake(259, 159, 61, 33);
             [_switchView setFrame:switchbutton];
         }
-        else
+        else //iPhone 4 or older 
         {
             _upcomingView.frame=CGRectMake(165,193,w,270);
             _tableView.frame=CGRectMake(0,193,w,270);
@@ -159,10 +163,10 @@
     _weatherCondition.frame=CGRectMake(8,48, _weatherCondition.frame.size.width, _weatherCondition.frame.size.height);
     _temperature.frame=CGRectMake(8,63, _temperature.frame.size.width,_temperature.frame.size.height);
     _weatherImage.frame=CGRectMake(8,14,_weatherImage.frame.size.width,_weatherImage.frame.size.height);}
-    else
+    else //iPad
     {
-        _tableView.frame=CGRectMake(0,417,385,509);
-         _youtubeTableView.frame=CGRectMake(385, 417, 385,509);
+        _tableView.frame=CGRectMake(0,417,385,529);
+         _youtubeTableView.frame=CGRectMake(385, 417, 385,529);
         _upcomingView.frame=CGRectMake(527,94,233,304);
         CGRect bell=CGRectMake(74, 300, 130, 61);
         [_bellSchedule setFrame:bell];
@@ -184,8 +188,8 @@ finishedWithFeed:(GDataFeedBase *)aFeed
     if ([self internetCheck])
     {
     [self youtubeData];
-        
-	[self.youtubeTableView reloadData];
+    [_youtubeTableView reloadData]; 
+	
     }
 
     
@@ -201,13 +205,12 @@ finishedWithFeed:(GDataFeedBase *)aFeed
 -(void)youtubeData
 {
     _youtubeThumbnails=[[NSMutableArray alloc]init];
-   
+    
     for (int y=0; y<12; y++){
-        GDataEntryBase *entry = [[feed entries] objectAtIndex:y];
+        GDataEntryBase *entry = [[_feed entries] objectAtIndex:y];
         NSArray *thumbnails = [[(GDataEntryYouTubeVideo *)entry mediaGroup] mediaThumbnails];
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[thumbnails objectAtIndex:0] URLString]]];
-        [_youtubeThumbnails addObject:data];
-    }
+        [_youtubeThumbnails addObject:data];}
 
     
 }
@@ -220,7 +223,7 @@ finishedWithFeed:(GDataFeedBase *)aFeed
      }
     else if (tableView==self.youtubeTableView)
     {
-        return [[feed entries] count];
+        return [[_feed entries] count];
     }
     else if (tableView==self.upcomingView)
     {
@@ -252,13 +255,12 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         }
         
         // Configure the cell.
-        GDataEntryBase *entry = [[feed entries] objectAtIndex:indexPath.row];
+        GDataEntryBase *entry = [[_feed entries] objectAtIndex:indexPath.row];
         NSString *title = [[entry title] stringValue];
         
         cell.textLabel.text = title;
         cell.textLabel.numberOfLines = 2;
         cell.textLabel.font = [UIFont boldSystemFontOfSize:12];
-        
         cell.imageView.image = [UIImage imageWithData:[_youtubeThumbnails objectAtIndex:indexPath.row]];
         return cell;
     }
@@ -293,17 +295,16 @@ finishedWithFeed:(GDataFeedBase *)aFeed
    if (tableView==self.wordpresstableView)
    {
     ViewController1*newview = [self.storyboard instantiateViewControllerWithIdentifier:@"pushedView"];
-    url=[[[[self rssParser]rssItems]objectAtIndex:indexPath.row]linkUrl];
-    NSLog(@"NSString *string = \n%@", url);
-    newview.passedString =url;
+    _url=[[[[self rssParser]rssItems]objectAtIndex:indexPath.row]linkUrl];
+    NSLog(@"NSString *string = \n%@", _url);
+    newview.passedString =_url;
     [self.navigationController pushViewController:newview animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
    }
     else if (tableView==self.youtubeTableView)
     {
         ViewController3*newyt = [self.storyboard instantiateViewControllerWithIdentifier:@"pushed2"];
-
-        GDataEntryBase *entry2 = [[feed entries] objectAtIndex:indexPath.row];
+        GDataEntryBase *entry2 = [[_feed entries] objectAtIndex:indexPath.row];
         NSArray *contents = [[(GDataEntryYouTubeVideo *)entry2 mediaGroup] mediaContents];
         NSURL*s5=[NSURL URLWithString:[[contents objectAtIndex:0] URLString]];
         newyt.passedString2=s5; 
@@ -432,10 +433,11 @@ finishedWithFeed:(GDataFeedBase *)aFeed
 
 - (void)calanderDataReady
 {
-    NSError *myError = nil;
     if([self internetCheck])
     {
-    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:_weatherInfo options:NSJSONReadingMutableLeaves  error:&myError];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSError *error2 = nil;
+    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:_weatherInfo options:NSJSONReadingMutableLeaves  error:&error2];
     NSArray *results =  [res objectForKey:@"current_observation"];
     NSString *cur = [results valueForKey:@"weather"];
     NSString *tmp = [results valueForKey:@"temperature_string"];
@@ -447,7 +449,7 @@ finishedWithFeed:(GDataFeedBase *)aFeed
     _weatherImage.image=image;
     _weatherCondition.text=cur;
     _temperature.text=tmp;
-    }
+        });}
 }
 
 - (IBAction)refresh:(UIButton *)sender {
@@ -466,11 +468,13 @@ finishedWithFeed:(GDataFeedBase *)aFeed
     {
         _youtubeTableView.hidden=YES;
         _upcomingView.hidden=NO;
+        [_switchView setTitle:@"Channel" forState:UIControlStateNormal];
     }
     else
     {
         _upcomingView.hidden=YES;
         _youtubeTableView.hidden=NO;
+        [_switchView setTitle:@"Events" forState:UIControlStateNormal];
     }
 }
 

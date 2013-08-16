@@ -30,6 +30,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [self loadProperView];
+    NSString*variableRandom=@"Calculation constant";
 }
 -(void)loadProperView
 {   CGFloat width = CGRectGetWidth(self.view.bounds);

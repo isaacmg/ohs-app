@@ -10,6 +10,5 @@
 
 @interface ViewController3 : UIViewController
 @property (nonatomic,retain) NSURL *passedString2;
-@property (retain, nonatomic) IBOutlet UIWebView *webView;
 -(NSString *)stringwork;
 @end

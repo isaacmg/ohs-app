@@ -10,6 +10,22 @@
 @implementation Teacher_Info
 //Simplify code eventually...
 #pragma mark English 
+-(void)getInfoChasse
+{
+    _jimChasse=[[NSMutableArray alloc]init];
+    NSString*shortBio=@"Information still needed";
+    NSString*coursesTaught=@"Principal";
+    NSString*phoneNumber=@"207-866-4916";
+    NSString*emailAddress=@"jchasse@rsu26.org";
+    NSString*imageUrl=@"None at the moment";
+    [_jimChasse addObject:shortBio];
+    [_jimChasse addObject:coursesTaught];
+    [_jimChasse addObject:phoneNumber];
+    [_jimChasse addObject:emailAddress];
+    [_jimChasse addObject:imageUrl];
+
+    
+}
 -(void)getInfoBulteel
 {   _jimBulteel=[[NSMutableArray alloc]init];
     NSString*shortBio=@"Jim Bulteel has taught English at OHS for ten years. Prior to that he taught English and Drama to Dine (Navajo) students in New Mexico for nine years. He earned his Masters in Education from the University of Washington in Seattle, having arrived there from Sydney, Australia, where he taught history and multicultural for four years. He earned a BA from Oxford University, England in 1983.";
@@ -148,7 +164,7 @@ _waldoCabellero=[[NSMutableArray alloc]init];
 -(void)getInfoHubbard
 {
      _jaeHubbard=[[NSMutableArray alloc]init];
-    NSString*shortBio=@" has been teaching French at Orono High School since 1997.  She has lived and worked in France, summered in Italy, and played the classic tourist in many other western European countries.  There is little she loves more than studying languages and sharing her passion for them with students. ";
+    NSString*shortBio=@"has been teaching French at Orono High School since 1997.  She has lived and worked in France, summered in Italy, and played the classic tourist in many other western European countries.  There is little she loves more than studying languages and sharing her passion for them with students. ";
     NSString*coursesTaught=@"French I, French II, French III, French IV/V";
     NSString*phoneNumber=@"207-866-4916-335";
     NSString*emailAddress=@"jhubbard@rsu26.org";
@@ -227,7 +243,7 @@ _waldoCabellero=[[NSMutableArray alloc]init];
     NSString*coursesTaught=@"AP Statistics, Algebra I B2, Geometry A";
     NSString*phoneNumber=@"207-866-4916-321";
     NSString*emailAddress=@"rjelly@rsu26.org";
-    NSString*imageUrl=@"None at the moment";
+    NSString*imageUrl=@"http://isaac26.com/faculty_photos/rJelly.jpg";
     [_dickJelly addObject:shortBio];
     [_dickJelly addObject:coursesTaught];
     [_dickJelly addObject:phoneNumber];
@@ -286,7 +302,7 @@ _waldoCabellero=[[NSMutableArray alloc]init];
     NSString*coursesTaught=@"Anatomy, AP Biology, Biology, Forensic Science";
     NSString*phoneNumber=@"207-866-4916-329";
     NSString*emailAddress=@"lboyd@rsu26.org";
-    NSString*imageUrl=@"None at the moment";
+    NSString*imageUrl=@"http://isaac26.com/faculty_photos/lBoyd.jpg";
     [_lesileBoyd addObject:shortBio];
     [_lesileBoyd addObject:coursesTaught];
     [_lesileBoyd addObject:phoneNumber];
@@ -372,7 +388,7 @@ _waldoCabellero=[[NSMutableArray alloc]init];
     NSString*coursesTaught=@"World Civilizations, AP Human Geography, Native American Studies";
     NSString*phoneNumber=@"207-866-4916-323";
     NSString*emailAddress=@"sgoodall@rsu26.org";
-    NSString*imageUrl=@"None at the moment";
+    NSString*imageUrl=@"http://isaac26.com/faculty_photos/sGoodall.jpg";
     [_shanaGodall addObject:shortBio];
     [_shanaGodall addObject:coursesTaught];
     [_shanaGodall addObject:phoneNumber];
@@ -387,7 +403,7 @@ _waldoCabellero=[[NSMutableArray alloc]init];
     NSString*coursesTaught=@"Computer Applications, Publications, Accounting ";
     NSString*phoneNumber=@"207-866-4916-339";
     NSString*emailAddress=@"cboyd@rsu26.org";
-    NSString*imageUrl=@"None at the moment";
+    NSString*imageUrl=@"http://isaac26.com/faculty_photos/cBoyd.jpg";
     [_christieBoyd addObject:shortBio];
     [_christieBoyd addObject:coursesTaught];
     [_christieBoyd addObject:phoneNumber];
@@ -398,7 +414,7 @@ _waldoCabellero=[[NSMutableArray alloc]init];
 {
     _mGrobmyer=[[NSMutableArray alloc]init];
     NSString*shortBio=@"My name is Mackenzie Grobmyer and I'm the International Student Coordinator and ESL teacher at Orono High School. Before working at Orono High School, I taught in Shenzhen, China. I really enjoy working with people from different cultures--we have a lot to learn from one another. When I'm not in school, I'm likely enjoying the great outdoors or traveling, or figuring out a way to combine the two! I'm originally from Virginia, but came to Maine 8 years ago and have fallen in love with the recreation opportunities we have here.";
-    NSString*coursesTaught=@"For the 2013-14 school year, I will teach three courses at Orono High School: ESL I, ESL II, and Global Education. The remainder of my day is spent coordinating the international program--recruiting students, creating opportunities for our local and international students to interact, helping the international students with the day-to-day nuances of adjusting to a new education and social system, working with host families, building connections with UMaine, and more! For the 13-14 school year, we will have students from China, Denmark, and France.";
+    NSString*coursesTaught=@"For the 2013-14 school year, I will teach three courses at Orono High School: ESL I, ESL II, and Global Education. The remainder of my day is spent coordinating the international program.";
     NSString*phoneNumber=@"Extension ";
     NSString*emailAddress=@"mgrobmyer@rsu26.org";
     NSString*imageUrl=@"http://isaac26.com/faculty_photos/mGrobmyer.jpg";
@@ -415,6 +431,17 @@ _waldoCabellero=[[NSMutableArray alloc]init];
 }
 -(void)getInfoVanarsdale
 {
+    _janeVanarsdale=[[NSMutableArray alloc]init];
+    NSString*shortBio=@"I came to Orono in the fall of 1981.  I spent many years sharing library space with several public librarians and their staffs. The new public library has provided an opportunity for the school library to share space with new users and so expand our mission.  You will find the orchestra room, the MLTI staff and student helpers, and OHS International occupying what was once the Orono Public/School Library. A small stage, an occasional classroom, tutoring areas and casual seating offer us flexibility we did not have earlier.  With laptop access for everyone, the Orono Middle/High School Library Blog (http://oronomidhilib.wordpress.com) provides students and staff with access to our collections, subscriptions and rich online resources. Access is no longer limited by library hours. Library service has changed since I worked with some of the parents of my current students, but I still look forward to challenging questions, new information and its delivery.";
+    NSString*coursesTaught=@"Librarian";
+    NSString*phoneNumber=@"Extension ";
+    NSString*emailAddress=@"jvanarsdale@rsu26.org";
+    NSString*imageUrl=@"None";
+    [_janeVanarsdale addObject:shortBio];
+    [_janeVanarsdale addObject:coursesTaught];
+    [_janeVanarsdale addObject:phoneNumber];
+    [_janeVanarsdale addObject:emailAddress];
+    [_janeVanarsdale addObject:imageUrl];
     
 }
 
