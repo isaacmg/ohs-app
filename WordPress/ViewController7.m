@@ -13,7 +13,7 @@
 - (void)viewDidLoad
 {   [self formatString];
     [super viewDidLoad];
-	
+	self.navigationItem.title=_teacherName;
 }
 
 -(void)viewWillLayoutSubviews
@@ -294,10 +294,10 @@
     {
     if(((interface ==UIInterfaceOrientationPortrait) ||(interface ==UIInterfaceOrientationPortraitUpsideDown))){
             [self portraitView];}
-    else
-    {
+        else
+        {
         [self landscapeView];
-    }
+        }
 }
     
 }
@@ -306,15 +306,15 @@
     CGSize screenView = [[UIScreen mainScreen]bounds].size;
     if (screenView.height>481)
     {
-        _teacherImage.frame=CGRectMake(8, 8, 86, 115);
-        _teacherPhone.frame=CGRectMake(161, 133, 139, 21);
-        _teacherEmail.frame=CGRectMake(56, 150, 188, 21);
-        _coursesTaught.frame=CGRectMake(8, 181, 312, 70);
-        _teacherBio.frame=CGRectMake(0, 272, 320, 239);
-        _bioStatic.frame=CGRectMake(96, 252, 129, 21);
-        _phoneNumberStatic.frame=CGRectMake(8, 133, 149, 21);
-        _emailStatic.frame=CGRectMake(8, 150, 129, 21);
-         _coursesTaughtStatic.frame=CGRectMake(100, 165, 160, 20);
+        _teacherImage.frame=CGRectMake(8,68, 86, 115);
+        _teacherPhone.frame=CGRectMake(161, 183, 139, 21);
+        _teacherEmail.frame=CGRectMake(56, 200, 188, 21);
+        _coursesTaught.frame=CGRectMake(8, 241, 312, 70);
+        _teacherBio.frame=CGRectMake(0, 310, 330, 239);
+        _bioStatic.frame=CGRectMake(96, 292, 139, 21);
+        _phoneNumberStatic.frame=CGRectMake(8, 183, 149, 21);
+        _emailStatic.frame=CGRectMake(8, 200, 139, 21);
+         _coursesTaughtStatic.frame=CGRectMake(100, 225, 160, 20);
         self.coursesTaught.numberOfLines = 4;
     }
     else

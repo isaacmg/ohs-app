@@ -7,11 +7,6 @@
 //
 
 #import "ViewController6.h"
-
-@interface ViewController6 ()
-
-@end
-
 @implementation ViewController6
 
 - (void)viewDidLoad
@@ -22,8 +17,8 @@
 	// Do any additional setup after loading the view.
     _webView2.scalesPageToFit=YES;
     
-    
-	NSString *httpSource =@"http://riversidersu.org/index.php?option=com_content&view=article&id=121&Itemid=18";
+    self.navigationItem.title=@"OHS Homepage"; 
+	NSString *httpSource =@"http://rsu26.org";
     
     NSURL *fullUrl = [NSURL URLWithString:httpSource];
     NSURLRequest *httpRequest = [NSURLRequest requestWithURL:fullUrl];
@@ -38,11 +33,10 @@
 -(IBAction)backButtonPressed:(id)sender{
     
 	[_webView2 goBack];
-    [sender setSelected:YES];}
+        }
 
 //method for going forward in the webpage history
 -(IBAction)forwardButtonPressed:(id)sender{
-    [sender setSelected:YES];
 	[_webView2 goForward];
 }
 
@@ -50,14 +44,12 @@
 {
     NSString *currentURL =_webView2.request.URL.absoluteString;
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:currentURL]];
-    [sender setSelected:YES];
 }
 - (IBAction)refreshPressed:(id)sender {
-    [sender setSelected:YES];
     [_webView2 reload];
 }
 -(void)viewWillAppear:(BOOL)animated
-{
+{  
     [self loadProperView];
 }
 -(void)loadProperView
@@ -83,14 +75,11 @@
 	if(thisWebView.canGoBack == YES)
 	{
 		_back.enabled = YES;
-		
 	}
 	if(thisWebView.canGoForward == YES)
 	{
 		_forward.enabled = YES;
-		
 	}
-	
 }
 
 - (void)didReceiveMemoryWarning

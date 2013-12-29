@@ -10,8 +10,6 @@
 
 @implementation ViewController
 @synthesize wordpresstableView =_tableView;
-
-@synthesize selectedRow; 
 #pragma mark View Life Cycle  
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -22,7 +20,7 @@
 	_rssParser = [[BlogRssParser alloc]init];
 	self.rssParser.delegate = self;
 	[[self rssParser]startProcess];
-    //GData Youtube
+    //GData YouTube
     GDataServiceGoogleYouTube *service = [self youTubeService]; 
 	NSString *uploadsID = kGDataYouTubeUserFeedIDUploads;
 	NSURL *feedURL = [GDataServiceGoogleYouTube youTubeURLForUserID:@"oronoriot" userFeedID:uploadsID];
@@ -50,12 +48,15 @@
     }
 
 }
+
 -(void)viewWillDisappear:(BOOL)animated
 {
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
 }
-
--(BOOL)internetCheck                   
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+-(BOOL)internetCheck
 {
     NSError*error=nil;
     NSURL*googleURL= [NSURL URLWithString:@"http://api.wunderground.com/api/eae1e849db26ed92/conditions/q/ME/Orono.json"];
@@ -111,17 +112,17 @@
 
         }
         else {
-    _tableView.frame = CGRectMake(320,0,150,300);
-    _youtubeTableView.frame=CGRectMake(160,134,150,165);
-        _upcomingView.frame=CGRectMake(160,134,150,165);
+            _tableView.frame = CGRectMake(320,0,150,300);
+            _youtubeTableView.frame=CGRectMake(160,134,150,165);
+            _upcomingView.frame=CGRectMake(160,134,150,165);
             CGRect switchbutton2=CGRectMake(100-2,230,61,33);
             [_switchView setFrame:switchbutton2];
         }
     CGRect high=CGRectMake(2, 230, _refresh.frame.size.width, _refresh.frame.size.height);
     [_refresh setFrame: high];
-    _weatherImage.frame=CGRectMake(5, 15-5, _weatherImage.frame.size.width, _weatherImage.frame.size.height);
-    _temperature.frame=CGRectMake(5, 48, _temperature.frame.size.width, _temperature.frame.size.height);
-    _weatherCondition.frame=CGRectMake(5, 59, _weatherCondition.frame.size.width, _weatherCondition.frame.size.height);
+    _weatherImage.frame=CGRectMake(5, 15, _weatherImage.frame.size.width, _weatherImage.frame.size.height);
+    _temperature.frame=CGRectMake(5, 53, _temperature.frame.size.width, _temperature.frame.size.height);
+    _weatherCondition.frame=CGRectMake(5, 63, _weatherCondition.frame.size.width, _weatherCondition.frame.size.height);
         //CGRect switchbutton=CGRectMake(100, 159, 61, 33);
         
         
@@ -143,9 +144,9 @@
        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
         if(screenSize.height>480) //iPhone 5 or newer 
         {
-            _upcomingView.frame=CGRectMake(165,193,w,360);
-            _tableView.frame=CGRectMake(0,193,w,360);
-            _youtubeTableView.frame=CGRectMake(165,193,w,_tableView.frame.size.height);
+            _upcomingView.frame=CGRectMake(165,210,w,360);
+            _tableView.frame=CGRectMake(0,210,w,360);
+            _youtubeTableView.frame=CGRectMake(165,210,w,_tableView.frame.size.height);
             CGRect switchbutton=CGRectMake(259, 159, 61, 33);
             [_switchView setFrame:switchbutton];
         }
@@ -158,7 +159,7 @@
             [_switchView setFrame:switchbutton];
         }
     
-    _refresh.frame=CGRectMake(263,3,_refresh.frame.size.width,_refresh.frame.size.height);
+    _refresh.frame=CGRectMake(263,20,_refresh.frame.size.width,_refresh.frame.size.height);
     _youtubeTableView.hidden=NO;
     _weatherCondition.frame=CGRectMake(8,48, _weatherCondition.frame.size.width, _weatherCondition.frame.size.height);
     _temperature.frame=CGRectMake(8,63, _temperature.frame.size.width,_temperature.frame.size.height);
@@ -191,8 +192,6 @@ finishedWithFeed:(GDataFeedBase *)aFeed
     [_youtubeTableView reloadData]; 
 	
     }
-
-    
 }
 
 
@@ -210,7 +209,10 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         GDataEntryBase *entry = [[_feed entries] objectAtIndex:y];
         NSArray *thumbnails = [[(GDataEntryYouTubeVideo *)entry mediaGroup] mediaThumbnails];
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[thumbnails objectAtIndex:0] URLString]]];
-        [_youtubeThumbnails addObject:data];}
+        if(data)
+        {
+        [_youtubeThumbnails addObject:data];} //Cause of crash
+        }
 
     
 }
@@ -314,7 +316,7 @@ finishedWithFeed:(GDataFeedBase *)aFeed
         
     }
     else if (tableView==self.upcomingView)
-    {   NSString*calanderUrl=@"http://riversidersu.org/index.php?option=com_wrapper&view=wrapper&Itemid=222";
+    {   NSString*calanderUrl=@"http://rsu26.org";
        
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:calanderUrl]];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -374,7 +376,7 @@ finishedWithFeed:(GDataFeedBase *)aFeed
     EKEventStore *eventStore = [[EKEventStore alloc] init];
     CalanderData *calEvent = [[[CalanderData alloc]init]autorelease];
     
-    calEvent = [_EventArray objectAtIndex:selectedRow];
+    calEvent = [_EventArray objectAtIndex:_selectedRow];
     EKEvent *event  = [EKEvent eventWithEventStore:eventStore];
     event.title     = calEvent.Title;
     

@@ -28,7 +28,7 @@
 	UITableView * _tableView;
 	UIToolbar * _toolbar;
     NSMutableArray*_EventArray;
-    NSInteger selectedRow;
+    NSInteger _selectedRow;
     UIActionSheet *AddEventSheet;
 }
 

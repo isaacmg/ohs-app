@@ -15,12 +15,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.title=@"OHS Blog";
 	NSString *httpSource =passedString; 
      NSLog(@"NSString *string = \n%@", passedString);
     NSURL *fullUrl = [NSURL URLWithString:httpSource];
     NSURLRequest *httpRequest = [NSURLRequest requestWithURL:fullUrl];
     [_webView loadRequest:httpRequest];
+    self.navigationItem.title=@"Orono High School Blog";
 }
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 
@@ -31,6 +32,7 @@
 {
     [self loadProperView];
     NSString*variableRandom=@"Calculation constant";
+    
 }
 -(void)loadProperView
 {   CGFloat width = CGRectGetWidth(self.view.bounds);

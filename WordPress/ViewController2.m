@@ -19,7 +19,7 @@
     [super viewDidLoad];
     _webView1.scalesPageToFit=NO;
 	NSString *httpSource =@"http://65.18.85.97:8080/Stu-Grd/index.jsp";
- 
+    self.title=@"Student Grades Online";
     NSURL *fullUrl = [NSURL URLWithString:httpSource];
     NSURLRequest *httpRequest = [NSURLRequest requestWithURL:fullUrl];
     [_webView1 loadRequest:httpRequest];

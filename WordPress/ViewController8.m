@@ -11,7 +11,7 @@
 @implementation ViewController8
 -(void)viewWillAppear:(BOOL)animated
 {
-    
+    self.navigationItem.title=@"Bell Schedule"; 
     [self setDayInfo];
 }
 -(void)viewWillLayoutSubviews
@@ -37,17 +37,17 @@
     {
         if(((orientation == UIInterfaceOrientationLandscapeLeft) ||
         (orientation == UIInterfaceOrientationLandscapeRight))){
-        CGRect regular =CGRectMake(350, 20, _regularButton.frame.size.width, _regularButton.frame.size.height);
-        CGRect advisory =CGRectMake(350, 80, _advisoryButton.frame.size.width, _advisoryButton.frame.size.height);
-        CGRect mini =CGRectMake(350, 140, _miniDayButton.frame.size.width, _miniDayButton.frame.size.height);
+        CGRect regular =CGRectMake(350, 60, _regularButton.frame.size.width, _regularButton.frame.size.height);
+        CGRect advisory =CGRectMake(350, 120, _advisoryButton.frame.size.width, _advisoryButton.frame.size.height);
+        CGRect mini =CGRectMake(350, 190, _miniDayButton.frame.size.width, _miniDayButton.frame.size.height);
         [_regularButton setFrame:regular];
         [_advisoryButton setFrame:advisory];
         [_miniDayButton setFrame:mini];}
         else //Portrait View 
         {
-            CGRect regular =CGRectMake(5, 353, _regularButton.frame.size.width, _regularButton.frame.size.height);
-            CGRect advisory =CGRectMake(109+3, 353, _advisoryButton.frame.size.width, _advisoryButton.frame.size.height);
-            CGRect mini =CGRectMake(216, 353, _miniDayButton.frame.size.width, _miniDayButton.frame.size.height);
+            CGRect regular =CGRectMake(5, 409+1, _regularButton.frame.size.width, _regularButton.frame.size.height);
+            CGRect advisory =CGRectMake(109+3, 410, _advisoryButton.frame.size.width, _advisoryButton.frame.size.height);
+            CGRect mini =CGRectMake(216, 410, _miniDayButton.frame.size.width, _miniDayButton.frame.size.height);
             [_regularButton setFrame:regular];
             [_advisoryButton setFrame:advisory];
             [_miniDayButton setFrame:mini];
